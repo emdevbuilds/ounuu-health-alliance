@@ -3,22 +3,9 @@ import { connectDB } from "@/lib/mongodb";
 import Contact from "@/models/Contact";
 import { ApiResponse } from "@/lib/api-response";
 import { contactSchema } from "@/app/contact/schema";
-import { checkRateLimit } from "@/lib/rate-limiter";
 
 export async function POST(req: NextRequest) {
   try {
-    // const ip =
-    //   req.headers.get("x-forwarded-for") ||
-    //   req.headers.get("x-real-ip") ||
-    //   "unknown";
-
-    // if (!checkRateLimit(ip, 5, 60000)) {
-    //   return ApiResponse.error(
-    //     "Too many requests. Please try again later.",
-    //     429
-    //   );
-    // }
-
     const body = await req.json();
     const validatedData = contactSchema.parse(body);
 
