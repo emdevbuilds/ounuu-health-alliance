@@ -73,7 +73,6 @@ const DonationSchema = new Schema<IDonation>(
     },
     paystackReference: {
       type: String,
-      unique: true,
       sparse: true,
     },
     paystackAccessCode: {
@@ -95,7 +94,7 @@ const DonationSchema = new Schema<IDonation>(
 DonationSchema.index({ email: 1 });
 DonationSchema.index({ createdAt: -1 });
 DonationSchema.index({ paymentStatus: 1 });
-DonationSchema.index({ paystackReference: 1 });
+DonationSchema.index({ paystackReference: 1 }, { unique: true, sparse: true });
 
 export default models.Donation ||
   mongoose.model<IDonation>("Donation", DonationSchema);

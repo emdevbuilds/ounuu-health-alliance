@@ -1,11 +1,11 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, Suspense } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import { Loader, CheckCircle, XCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-export default function VerifyDonation() {
+function VerifyDonationContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
   const [status, setStatus] = useState<"loading" | "success" | "failed">(
@@ -49,87 +49,99 @@ export default function VerifyDonation() {
   }, [searchParams]);
 
   return (
-    <main className="padding bg-gray-50">
-      <div className="flex items-center justify-center pt-12 md:pt-16">
-        <div className="max-w-md w-full bg-white rounded-lg shadow-lg p-8 text-center">
-          {status === "loading" && (
-            <>
-              <Loader className="w-16 h-16 text-green-700 mx-auto mb-4 animate-spin" />
-              <h2 className="text-2xl font-semibold mb-2">
-                Verifying Payment...
-              </h2>
-              <p className="text-gray-600">
-                Please wait while we confirm your donation.
-              </p>
-            </>
-          )}
+    <div className="min-h-screen flex items-center justify-center p-4 bg-gray-50">
+      <div className="max-w-md w-full bg-white rounded-lg shadow-lg p-8 text-center">
+        {status === "loading" && (
+          <>
+            <Loader className="w-16 h-16 text-green-700 mx-auto mb-4 animate-spin" />
+            <h2 className="text-2xl font-semibold mb-2">
+              Verifying Payment...
+            </h2>
+            <p className="text-gray-600">
+              Please wait while we confirm your donation.
+            </p>
+          </>
+        )}
 
-          {status === "success" && (
-            <>
-              <CheckCircle className="w-16 h-16 text-green-700 mx-auto mb-4" />
-              <h2 className="text-2xl font-semibold text-green-800 mb-2">
-                Donation Successful!
-              </h2>
-              <p className="text-gray-600 mb-6">{message}</p>
+        {status === "success" && (
+          <>
+            <CheckCircle className="w-16 h-16 text-green-700 mx-auto mb-4" />
+            <h2 className="text-2xl font-semibold text-green-800 mb-2">
+              Donation Successful!
+            </h2>
+            <p className="text-gray-600 mb-6">{message}</p>
 
-              {donationDetails && (
-                <div className="bg-gray-50 rounded-lg p-4 mb-6 text-left">
-                  <p className="text-sm text-gray-600 mb-2">
-                    <strong>Amount:</strong> {donationDetails.currency}{" "}
-                    {donationDetails.amount?.toLocaleString()}
-                  </p>
-                  <p className="text-sm text-gray-600">
-                    <strong>Date:</strong>{" "}
-                    {new Date(donationDetails.paidAt).toLocaleDateString()}
-                  </p>
-                </div>
-              )}
-
-              <div className="space-y-3">
-                <Button
-                  onClick={() => router.push("/")}
-                  className="w-full bg-green-700 hover:bg-green-800"
-                >
-                  Return Home
-                </Button>
-                <Button
-                  onClick={() => router.push("/donation")}
-                  variant="outline"
-                  className="w-full"
-                >
-                  Make Another Donation
-                </Button>
+            {donationDetails && (
+              <div className="bg-gray-50 rounded-lg p-4 mb-6 text-left">
+                <p className="text-sm text-gray-600 mb-2">
+                  <strong>Amount:</strong> {donationDetails.currency}{" "}
+                  {donationDetails.amount?.toLocaleString()}
+                </p>
+                <p className="text-sm text-gray-600">
+                  <strong>Date:</strong>{" "}
+                  {new Date(donationDetails.paidAt).toLocaleDateString()}
+                </p>
               </div>
-            </>
-          )}
+            )}
 
-          {status === "failed" && (
-            <>
-              <XCircle className="w-16 h-16 text-red-600 mx-auto mb-4" />
-              <h2 className="text-2xl font-semibold text-red-800 mb-2">
-                Payment Failed
-              </h2>
-              <p className="text-gray-600 mb-6">{message}</p>
+            <div className="space-y-3">
+              <Button
+                onClick={() => router.push("/")}
+                className="w-full bg-green-700 hover:bg-green-800"
+              >
+                Return Home
+              </Button>
+              <Button
+                onClick={() => router.push("/donation")}
+                variant="outline"
+                className="w-full"
+              >
+                Make Another Donation
+              </Button>
+            </div>
+          </>
+        )}
 
-              <div className="space-y-3">
-                <Button
-                  onClick={() => router.push("/donation")}
-                  className="w-full bg-green-700 hover:bg-green-800"
-                >
-                  Try Again
-                </Button>
-                <Button
-                  onClick={() => router.push("/")}
-                  variant="outline"
-                  className="w-full"
-                >
-                  Return Home
-                </Button>
-              </div>
-            </>
-          )}
-        </div>
+        {status === "failed" && (
+          <>
+            <XCircle className="w-16 h-16 text-red-600 mx-auto mb-4" />
+            <h2 className="text-2xl font-semibold text-red-800 mb-2">
+              Payment Failed
+            </h2>
+            <p className="text-gray-600 mb-6">{message}</p>
+
+            <div className="space-y-3">
+              <Button
+                onClick={() => router.push("/donation")}
+                className="w-full bg-green-700 hover:bg-green-800"
+              >
+                Try Again
+              </Button>
+              <Button
+                onClick={() => router.push("/")}
+                variant="outline"
+                className="w-full"
+              >
+                Return Home
+              </Button>
+            </div>
+          </>
+        )}
       </div>
-    </main>
+    </div>
+  );
+}
+
+export default function VerifyDonation() {
+  return (
+    <Suspense
+      fallback={
+        <div className="min-h-screen flex items-center justify-center p-4 bg-gray-50">
+          <Loader className="w-16 h-16 text-green-700 animate-spin" />
+        </div>
+      }
+    >
+      <VerifyDonationContent />
+    </Suspense>
   );
 }
