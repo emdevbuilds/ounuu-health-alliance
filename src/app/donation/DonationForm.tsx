@@ -15,13 +15,12 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Loader } from "lucide-react";
 import { toast } from "react-toastify";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const DonationForm = () => {
   const [customAmount, setCustomAmount] = useState<string>("");
   const [selectedAmount, setSelectedAmount] = useState<number | null>(null);
 
-  const presetAmounts = [500, 1000, 2500, 5000, 10000];
   const purposes = [
     "General Support",
     "Education",
@@ -29,6 +28,11 @@ const DonationForm = () => {
     "Food Relief",
     "Emergency Response",
     "Other",
+  ];
+
+  const currencies = [
+    { code: "NGN", symbol: "₦", name: "Nigerian Naira" },
+    { code: "USD", symbol: "$", name: "US Dollar" },
   ];
 
   const {
@@ -55,6 +59,40 @@ const DonationForm = () => {
 
   const isAnonymous = watch("isAnonymous");
   const donationType = watch("donationType");
+  const selectedCurrency = watch("currency");
+
+  const getCurrencySymbol = () => {
+    return currencies.find((c) => c.code === selectedCurrency)?.symbol || "₦";
+  };
+
+  const getMinimumAmount = () => {
+    switch (selectedCurrency) {
+      case "USD":
+        return 2; // $2 minimum (Paystack requirement)
+      case "NGN":
+      default:
+        return 100; // ₦100 minimum
+    }
+  };
+
+  const getPresetAmounts = () => {
+    switch (selectedCurrency) {
+      case "USD":
+        return [5, 10, 25, 50, 100]; // Removed $2 since minimum is now $2
+      case "NGN":
+      default:
+        return [500, 1000, 2500, 5000, 10000];
+    }
+  };
+
+  const presetAmounts = getPresetAmounts();
+
+  // Reset amount when currency changes
+  useEffect(() => {
+    setSelectedAmount(null);
+    setCustomAmount("");
+    setValue("amount", 0);
+  }, [selectedCurrency, setValue]);
 
   const handleAmountSelect = (amount: number) => {
     setSelectedAmount(amount);
@@ -138,9 +176,23 @@ const DonationForm = () => {
 
               {/* Amount Selection */}
               <Field>
-                <FieldLabel className="text-base">
-                  Donation Amount (NGN) *
-                </FieldLabel>
+                <FieldLabel className="text-base">Donation Amount *</FieldLabel>
+
+                {/* Currency Selector */}
+                <div className="mb-3">
+                  <select
+                    {...register("currency")}
+                    disabled={isSubmitting}
+                    className="w-full rounded-md border border-gray-300 px-3 py-2 focus:border-green-700 focus:outline-none"
+                  >
+                    {currencies.map((curr) => (
+                      <option key={curr.code} value={curr.code}>
+                        {curr.symbol} {curr.code} - {curr.name}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+
                 <div className="grid grid-cols-3 sm:grid-cols-5 gap-2 mb-3">
                   {presetAmounts.map((amount) => (
                     <button
@@ -154,7 +206,8 @@ const DonationForm = () => {
                       }`}
                       disabled={isSubmitting}
                     >
-                      ₦{amount.toLocaleString()}
+                      {getCurrencySymbol()}
+                      {amount.toLocaleString()}
                     </button>
                   ))}
                 </div>
@@ -164,7 +217,7 @@ const DonationForm = () => {
                   value={customAmount}
                   onChange={(e) => handleCustomAmountChange(e.target.value)}
                   disabled={isSubmitting}
-                  min="100"
+                  min={getMinimumAmount()}
                 />
                 {errors.amount && (
                   <p className="text-sm text-red-500 mt-1">

@@ -41,12 +41,12 @@ const DonationSchema = new Schema<IDonation>(
     amount: {
       type: Number,
       required: [true, "Amount is required"],
-      min: [100, "Minimum donation is 100"],
+      min: [1, "Amount must be at least 1"],
     },
     currency: {
       type: String,
       default: "NGN",
-      enum: ["NGN", "USD", "GHS", "ZAR"],
+      enum: ["NGN", "USD"],
     },
     donationType: {
       type: String,
