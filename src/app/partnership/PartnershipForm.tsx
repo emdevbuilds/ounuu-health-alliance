@@ -118,8 +118,8 @@ const PartnershipForm = () => {
           <FieldSet>
             <FieldLegend>
               <div className="flex items-center gap-3 mb-6">
-                <div className="p-3 bg-purple-100 rounded-xl">
-                  <Handshake className="w-6 h-6 text-purple-700" />
+                <div className="p-3 bg-green-100 rounded-xl">
+                  <Handshake className="w-6 h-6 text-green-700" />
                 </div>
                 <h3 className="font-bold text-green-800 text-2xl md:text-3xl">
                   Partnership Inquiry
@@ -129,7 +129,7 @@ const PartnershipForm = () => {
 
             <FieldGroup className="space-y-6">
               {/* Organization Information Section */}
-              <div className="bg-gradient-to-br from-gray-50 to-purple-50/30 rounded-2xl p-6 border-2 border-gray-100">
+              <div className="bg-gradient-to-br from-gray-50 to-green-50/30 rounded-2xl p-6 border-2 border-gray-100">
                 <h4 className="text-lg font-semibold text-green-800 mb-6 flex items-center gap-2">
                   <Building2 className="w-5 h-5" />
                   Organization Information
@@ -138,7 +138,7 @@ const PartnershipForm = () => {
                 <div className="space-y-5">
                   <Field>
                     <FieldLabel className="text-base font-medium text-gray-700 flex items-center gap-2">
-                      <Building2 className="w-4 h-4 text-purple-600" />
+                      <Building2 className="w-4 h-4 text-green-600" />
                       Organization Name *
                     </FieldLabel>
                     <Input
@@ -215,7 +215,7 @@ const PartnershipForm = () => {
               </div>
 
               {/* Contact Information Section */}
-              <div className="bg-gradient-to-br from-gray-50 to-pink-50/30 rounded-2xl p-6 border-2 border-gray-100">
+              <div className="bg-gradient-to-br from-gray-50 to-green-50/30 rounded-2xl p-6 border-2 border-gray-100">
                 <h4 className="text-lg font-semibold text-green-800 mb-6 flex items-center gap-2">
                   <User className="w-5 h-5" />
                   Contact Information
@@ -224,7 +224,7 @@ const PartnershipForm = () => {
                 <div className="space-y-5">
                   <Field>
                     <FieldLabel className="text-base font-medium text-gray-700 flex items-center gap-2">
-                      <User className="w-4 h-4 text-purple-600" />
+                      <User className="w-4 h-4 text-green-600" />
                       Contact Person *
                     </FieldLabel>
                     <Input
@@ -243,7 +243,7 @@ const PartnershipForm = () => {
 
                   <Field>
                     <FieldLabel className="text-base font-medium text-gray-700 flex items-center gap-2">
-                      <Mail className="w-4 h-4 text-purple-600" />
+                      <Mail className="w-4 h-4 text-green-600" />
                       Email *
                     </FieldLabel>
                     <Input
@@ -263,7 +263,7 @@ const PartnershipForm = () => {
 
                   <Field>
                     <FieldLabel className="text-base font-medium text-gray-700 flex items-center gap-2">
-                      <Phone className="w-4 h-4 text-purple-600" />
+                      <Phone className="w-4 h-4 text-green-600" />
                       Phone Number *
                     </FieldLabel>
                     <Input
@@ -283,7 +283,7 @@ const PartnershipForm = () => {
               </div>
 
               {/* Partnership Details Section */}
-              <div className="bg-gradient-to-br from-gray-50 to-purple-50/30 rounded-2xl p-6 border-2 border-gray-100">
+              <div className="bg-gradient-to-br from-gray-50 to-green-50/30 rounded-2xl p-6 border-2 border-gray-100">
                 <h4 className="text-lg font-semibold text-green-800 mb-6 flex items-center gap-2">
                   <Target className="w-5 h-5" />
                   Partnership Details
@@ -347,7 +347,7 @@ const PartnershipForm = () => {
 
                   <Field>
                     <FieldLabel className="text-base font-medium text-gray-700 flex items-center gap-2">
-                      <MessageSquare className="w-4 h-4 text-purple-600" />
+                      <MessageSquare className="w-4 h-4 text-green-600" />
                       Message / Proposal *
                     </FieldLabel>
                     <Textarea
@@ -370,16 +370,16 @@ const PartnershipForm = () => {
           </FieldSet>
 
           {/* Information Notice */}
-          <div className="bg-gradient-to-r from-purple-50 to-pink-50 p-6 rounded-2xl border-2 border-purple-100 mb-6">
+          <div className="bg-gradient-to-r from-green-50 to-emerald-50 p-6 rounded-2xl border-2 border-green-100 mb-6">
             <div className="flex items-start gap-4">
-              <div className="p-2 bg-purple-100 rounded-lg flex-shrink-0">
-                <Handshake className="w-6 h-6 text-purple-700" />
+              <div className="p-2 bg-green-100 rounded-lg flex-shrink-0">
+                <Handshake className="w-6 h-6 text-green-700" />
               </div>
               <div>
-                <h4 className="font-semibold text-purple-900 mb-2">
+                <h4 className="font-semibold text-green-900 mb-2">
                   What Happens Next?
                 </h4>
-                <p className="text-sm text-purple-800">
+                <p className="text-sm text-green-800">
                   Our partnership team will review your inquiry and reach out
                   within 3-5 business days to discuss potential collaboration
                   opportunities.
@@ -393,7 +393,7 @@ const PartnershipForm = () => {
             <Button
               type="submit"
               disabled={isSubmitting}
-              className="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:from-purple-700 hover:to-pink-700 py-6 text-lg font-bold rounded-xl shadow-xl hover:shadow-2xl transition-all"
+              className="w-full bg-gradient-to-r from-green-600 to-green-700 text-white hover:from-green-700 hover:to-green-800 py-6 text-lg font-bold rounded-xl shadow-xl hover:shadow-2xl transition-all"
               size="lg"
             >
               {isSubmitting ? (

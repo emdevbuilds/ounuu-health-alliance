@@ -100,7 +100,7 @@ const Page = () => {
               repeat: Infinity,
               ease: "easeInOut",
             }}
-            className="absolute -top-20 -right-20 w-96 h-96 bg-blue-400/20 rounded-full blur-3xl"
+            className="absolute -top-20 -right-20 w-96 h-96 bg-green-400/20 rounded-full blur-3xl"
           />
           <motion.div
             animate={{
@@ -127,17 +127,17 @@ const Page = () => {
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-4 py-2 mb-6 bg-blue-100 rounded-full"
+            className="inline-flex items-center gap-2 px-4 py-2 mb-6 bg-green-100 rounded-full"
           >
-            <Users className="w-5 h-5 text-blue-700" />
-            <span className="text-sm font-semibold text-blue-800">
+            <Users className="w-5 h-5 text-green-700" />
+            <span className="text-sm font-semibold text-green-800">
               Join Our Team
             </span>
           </motion.div>
 
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-green-800 mb-6">
             Volunteer{" "}
-            <span className="bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-green-600 to-green-700 bg-clip-text text-transparent">
               With Us
             </span>
           </h1>

@@ -63,7 +63,7 @@ const benefits = [
     icon: Target,
     title: "Shared Impact",
     description: "Amplify your social impact through collaborative initiatives",
-    gradient: "from-purple-500 to-pink-500",
+    gradient: "from-green-500 to-emerald-500",
   },
   {
     icon: Users,
@@ -75,13 +75,13 @@ const benefits = [
     icon: TrendingUp,
     title: "Brand Visibility",
     description: "Enhanced reputation and visibility in community development",
-    gradient: "from-green-500 to-emerald-500",
+    gradient: "from-purple-500 to-pink-500",
   },
   {
     icon: Globe,
     title: "Network Growth",
     description: "Connect with like-minded organizations and stakeholders",
-    gradient: "from-orange-500 to-red-500",
+    gradient: "from-orange-500 to-amber-500",
   },
 ];
 
@@ -107,7 +107,7 @@ const Page = () => {
   return (
     <main className="overflow-hidden">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-purple-50 via-white to-purple-50/30 padding pt-24 pb-16">
+      <section className="relative bg-gradient-to-br from-green-50 via-white to-green-50/30 padding pt-24 pb-16">
         {/* Decorative Background Elements */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <motion.div
@@ -120,7 +120,7 @@ const Page = () => {
               repeat: Infinity,
               ease: "easeInOut",
             }}
-            className="absolute -top-20 -right-20 w-96 h-96 bg-purple-400/20 rounded-full blur-3xl"
+            className="absolute -top-20 -right-20 w-96 h-96 bg-green-400/20 rounded-full blur-3xl"
           />
           <motion.div
             animate={{
@@ -132,7 +132,7 @@ const Page = () => {
               repeat: Infinity,
               ease: "easeInOut",
             }}
-            className="absolute -bottom-20 -left-20 w-96 h-96 bg-pink-500/20 rounded-full blur-3xl"
+            className="absolute -bottom-20 -left-20 w-96 h-96 bg-green-500/20 rounded-full blur-3xl"
           />
         </div>
 
@@ -147,17 +147,17 @@ const Page = () => {
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-4 py-2 mb-6 bg-purple-100 rounded-full"
+            className="inline-flex items-center gap-2 px-4 py-2 mb-6 bg-green-100 rounded-full"
           >
-            <Handshake className="w-5 h-5 text-purple-700" />
-            <span className="text-sm font-semibold text-purple-800">
+            <Handshake className="w-5 h-5 text-green-700" />
+            <span className="text-sm font-semibold text-green-800">
               Partner With Us
             </span>
           </motion.div>
 
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-green-800 mb-6">
             Build a{" "}
-            <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-green-600 to-green-700 bg-clip-text text-transparent">
               Stronger Future
             </span>{" "}
             Together
@@ -181,7 +181,7 @@ const Page = () => {
             <motion.div key={index} variants={scaleIn}>
               <motion.div
                 whileHover={{ y: -5, scale: 1.02 }}
-                className="bg-white rounded-2xl p-6 shadow-xl border-2 border-purple-100 h-full"
+                className="bg-white rounded-2xl p-6 shadow-xl border-2 border-green-100 h-full"
               >
                 <div className="flex flex-col items-center text-center">
                   <div
@@ -215,7 +215,7 @@ const Page = () => {
               whileInView={{ width: "4rem" }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="h-1 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full mx-auto mb-6"
+              className="h-1 bg-gradient-to-r from-green-600 to-green-400 rounded-full mx-auto mb-6"
             />
             <h2 className="text-3xl md:text-4xl font-bold text-green-800 mb-4">
               Who Can Partner With Us?
@@ -236,11 +236,11 @@ const Page = () => {
               <motion.div key={index} variants={scaleIn}>
                 <motion.div
                   whileHover={{ y: -10 }}
-                  className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-8 shadow-xl border-2 border-purple-100 h-full"
+                  className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-8 shadow-xl border-2 border-green-100 h-full"
                 >
                   <div className="flex flex-col items-center text-center">
                     <div className="p-4 bg-white rounded-2xl shadow-lg mb-6">
-                      <type.icon className="w-12 h-12 text-purple-600" />
+                      <type.icon className="w-12 h-12 text-green-600" />
                     </div>
                     <h3 className="text-xl font-bold text-green-800 mb-3">
                       {type.title}
@@ -255,7 +255,7 @@ const Page = () => {
       </section>
 
       {/* Partnership Form Section */}
-      <section className="bg-gradient-to-br from-purple-50/50 via-white to-purple-50/30 padding py-20">
+      <section className="bg-gradient-to-br from-green-50/50 via-white to-green-50/30 padding py-20">
         <div className="max-w-4xl mx-auto">
           <motion.div
             initial="hidden"
@@ -269,7 +269,7 @@ const Page = () => {
               whileInView={{ width: "4rem" }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="h-1 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full mx-auto mb-6"
+              className="h-1 bg-gradient-to-r from-green-600 to-green-400 rounded-full mx-auto mb-6"
             />
             <h2 className="text-3xl md:text-4xl font-bold text-green-800 mb-4">
               Start a Partnership
@@ -285,7 +285,7 @@ const Page = () => {
             viewport={{ once: true, amount: 0.3 }}
             variants={fadeInUp}
           >
-            <div className="bg-gradient-to-br from-white to-purple-50/30 rounded-3xl shadow-2xl border-2 border-purple-100 p-6 md:p-12">
+            <div className="bg-gradient-to-br from-white to-green-50/30 rounded-3xl shadow-2xl border-2 border-green-100 p-6 md:p-12">
               <PartnershipForm />
             </div>
           </motion.div>
@@ -307,7 +307,7 @@ const Page = () => {
               whileInView={{ width: "4rem" }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="h-1 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full mx-auto mb-6"
+              className="h-1 bg-gradient-to-r from-green-600 to-green-400 rounded-full mx-auto mb-6"
             />
             <h2 className="text-3xl md:text-4xl font-bold text-green-800 mb-4">
               Our Partnership Process
@@ -347,9 +347,9 @@ const Page = () => {
               },
             ].map((item, index) => (
               <motion.div key={index} variants={scaleIn}>
-                <div className="bg-white rounded-2xl p-6 shadow-xl border-2 border-purple-100 h-full">
+                <div className="bg-white rounded-2xl p-6 shadow-xl border-2 border-green-100 h-full">
                   <div className="flex flex-col items-center text-center">
-                    <div className="w-14 h-14 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 flex items-center justify-center mb-4">
+                    <div className="w-14 h-14 rounded-full bg-gradient-to-r from-green-600 to-green-700 flex items-center justify-center mb-4">
                       <span className="text-2xl font-bold text-white">
                         {item.step}
                       </span>
@@ -367,7 +367,7 @@ const Page = () => {
       </section>
 
       {/* Why Partner Section */}
-      <section className="bg-gradient-to-br from-purple-50/50 via-white to-purple-50/30 padding py-20">
+      <section className="bg-gradient-to-br from-green-50/50 via-white to-green-50/30 padding py-20">
         <div className="max-w-4xl mx-auto">
           <motion.div
             initial="hidden"
@@ -375,16 +375,16 @@ const Page = () => {
             viewport={{ once: true }}
             variants={fadeInUp}
           >
-            <div className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-2xl p-8 border-2 border-purple-100 shadow-lg">
+            <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-2xl p-8 border-2 border-green-100 shadow-lg">
               <div className="flex items-start gap-4 mb-6">
-                <div className="p-3 bg-purple-100 rounded-lg flex-shrink-0">
-                  <Sparkles className="w-6 h-6 text-purple-700" />
+                <div className="p-3 bg-green-100 rounded-lg flex-shrink-0">
+                  <Sparkles className="w-6 h-6 text-green-700" />
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold text-purple-900 mb-2">
+                  <h3 className="text-2xl font-bold text-green-900 mb-2">
                     Why Partner With OUNUU?
                   </h3>
-                  <p className="text-purple-800">
+                  <p className="text-green-800">
                     Discover the benefits of collaborating with us
                   </p>
                 </div>
