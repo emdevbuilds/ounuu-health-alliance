@@ -196,7 +196,7 @@ const Navbar = () => {
           <Link href="/donation">
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Button
-                className="bg-green-700 text-white hover:bg-green-800 shadow-lg hover:shadow-xl transition-all duration-300 relative group"
+                className="bg-green-700 text-white hover:bg-green-800 shadow-lg hover:shadow-xl transition-all duration-300 relative group cursor-pointer"
                 size="lg"
               >
                 <span className="mr-2">Donate</span>
