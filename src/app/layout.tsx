@@ -265,7 +265,6 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${dancingScript.variable} antialiased`}
       >
-        {/* NO NAVBAR/FOOTER HERE - They're in route groups now */}
         {children}
         <Analytics />
         <ToastContainer

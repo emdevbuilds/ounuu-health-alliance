@@ -65,9 +65,6 @@ async function createSuperAdmin() {
     console.log("\n📧 Email:", ADMIN_EMAIL);
     console.log("🔑 Password:", ADMIN_PASSWORD);
     console.log("👤 Name:", ADMIN_NAME);
-    console.log(
-      "\n⚠️  IMPORTANT: Save these credentials securely and DO NOT commit them to GitHub!\n"
-    );
 
     await mongoose.connection.close();
     console.log("✅ Database connection closed");
