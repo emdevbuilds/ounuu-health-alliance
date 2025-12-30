@@ -3,8 +3,7 @@ import { Inter, Dancing_Script } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
 import { ToastContainer } from "react-toastify";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import "react-toastify/dist/ReactToastify.css";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -82,7 +81,7 @@ export const metadata: Metadata = {
       "Community-driven nonprofit transforming lives through accessible healthcare and support for underserved communities in Nigeria.",
     images: [
       {
-        url: "/og-image.jpg", // You'll need to create this image (1200x630px)
+        url: "/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "OUNUU Health Alliance - Serving Communities and Saving Lives",
@@ -99,17 +98,13 @@ export const metadata: Metadata = {
     title: "OUNUU Health Alliance | Serving Communities, Saving Lives",
     description:
       "Community-driven nonprofit transforming lives through accessible healthcare and support for underserved communities in Nigeria.",
-    images: ["/twitter-image.jpg"], // You'll need to create this image (1200x600px)
+    images: ["/twitter-image.jpg"],
   },
 
-  // Verification (Add when you have them)
-  verification: {
-    // google: "your-google-verification-code",
-    // yandex: "your-yandex-verification-code",
-    // bing: "your-bing-verification-code",
-  },
+  // Verification
+  verification: {},
 
-  // Alternate Languages (if you add translations later)
+  // Alternate Languages
   alternates: {
     canonical: "https://ounuu-health-alliance.vercel.app/",
   },
@@ -118,21 +113,21 @@ export const metadata: Metadata = {
   category: "nonprofit organization",
 
   // Manifest
-  manifest: "./manifest.json", // You'll need to create this
+  manifest: "/manifest.json",
 
   // Icons
   icons: {
     icon: [
-      { url: "./favicon.ico", sizes: "any" },
+      { url: "/favicon.ico", sizes: "any" },
       { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
       { url: "/icon-512.png", sizes: "512x512", type: "image/png" },
     ],
-    apple: [{ url: "./apple-icon.png", sizes: "180x180", type: "image/png" }],
+    apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
     other: [
       {
         rel: "mask-icon",
         url: "/safari-pinned-tab.svg",
-        color: "#16a34a", // Green-600
+        color: "#16a34a",
       },
     ],
   },
@@ -270,8 +265,8 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${dancingScript.variable} antialiased`}
       >
-        <Navbar />
-        <main id="main-content">{children}</main>
+        {/* NO NAVBAR/FOOTER HERE - They're in route groups now */}
+        {children}
         <Analytics />
         <ToastContainer
           position="top-center"
@@ -285,7 +280,6 @@ export default function RootLayout({
           pauseOnHover
           theme="light"
         />
-        <Footer />
       </body>
     </html>
   );

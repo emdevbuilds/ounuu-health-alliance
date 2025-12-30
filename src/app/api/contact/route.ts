@@ -2,7 +2,7 @@ import { NextRequest } from "next/server";
 import { connectDB } from "@/lib/mongodb";
 import Contact from "@/models/Contact";
 import { ApiResponse } from "@/lib/api-response";
-import { contactSchema } from "@/app/contact/schema";
+import { contactSchema } from "@/app/(website)/contact/schema";
 
 export async function POST(req: NextRequest) {
   try {

@@ -272,7 +272,7 @@ const DonationForm = () => {
                   </div>
                   <Input
                     type="number"
-                    placeholder="Custom amount"
+                    placeholder="Enter amount"
                     value={customAmount}
                     onChange={(e) => handleCustomAmountChange(e.target.value)}
                     disabled={isSubmitting}

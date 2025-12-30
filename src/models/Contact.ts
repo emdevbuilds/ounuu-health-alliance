@@ -46,6 +46,7 @@ const ContactSchema = new Schema<IContact>(
   }
 );
 
+// Single index definitions (no duplicates)
 ContactSchema.index({ email: 1 });
 ContactSchema.index({ createdAt: -1 });
 ContactSchema.index({ status: 1 });

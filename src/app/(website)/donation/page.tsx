@@ -171,16 +171,9 @@ const Donate = () => {
       {/* Donation Form Section */}
       <section className="bg-white padding py-20">
         <div className="max-w-4xl mx-auto">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-            variants={fadeInUp}
-          >
-            <div className="bg-gradient-to-br from-white to-green-50/30 rounded-3xl shadow-2xl border-2 border-green-100 p-6 md:p-12">
-              <DonationForm />
-            </div>
-          </motion.div>
+          <div className="bg-gradient-to-br from-white to-green-50/30 rounded-3xl shadow-2xl border-2 border-green-100 p-6 md:p-12">
+            <DonationForm />
+          </div>
 
           {/* Trust Indicators */}
           <motion.div

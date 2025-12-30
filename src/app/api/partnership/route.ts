@@ -2,7 +2,7 @@ import { NextRequest } from "next/server";
 import { connectDB } from "@/lib/mongodb";
 import Partnership from "@/models/Partnership";
 import { ApiResponse } from "@/lib/api-response";
-import { partnershipSchema } from "@/app/partnership/schema";
+import { partnershipSchema } from "@/app/(website)/partnership/schema";
 import { checkRateLimit } from "@/lib/rate-limiter";
 
 export async function POST(req: NextRequest) {

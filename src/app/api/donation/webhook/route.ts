@@ -27,7 +27,6 @@ export async function POST(req: NextRequest) {
 
     await connectDB();
 
-    // Handle different event types
     if (event.event === "charge.success") {
       const { reference, status, paid_at, id } = event.data;
 
@@ -39,8 +38,7 @@ export async function POST(req: NextRequest) {
         donation.paidAt = new Date(paid_at);
         await donation.save();
 
-        // You can add email notification logic here
-        console.log(`Donation ${donation._id} completed successfully`);
+        // console.log(`Donation ${donation._id} completed successfully`);
       }
     } else if (event.event === "charge.failed") {
       const { reference } = event.data;

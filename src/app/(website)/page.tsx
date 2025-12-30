@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion, Variants } from "framer-motion";
 import { members } from "@/lib/members";
+import { useState, useEffect } from "react";
 import {
   Ambulance,
   HeartHandshake,
@@ -26,83 +27,53 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 
-// Animation variants
+// Animation variants (keep all your existing variants)
 const fadeInUp: Variants = {
-  hidden: {
-    opacity: 0,
-    y: 40,
-  },
+  hidden: { opacity: 0, y: 40 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: {
-      duration: 0.6,
-      ease: [0.22, 1, 0.36, 1] as const,
-    },
+    transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] as const },
   },
 };
 
 const staggerContainer: Variants = {
-  hidden: {
-    opacity: 0,
-  },
+  hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: {
-      staggerChildren: 0.15,
-      delayChildren: 0.2,
-    },
+    transition: { staggerChildren: 0.15, delayChildren: 0.2 },
   },
 };
 
 const scaleIn: Variants = {
-  hidden: {
-    opacity: 0,
-    scale: 0.9,
-    y: 20,
-  },
+  hidden: { opacity: 0, scale: 0.9, y: 20 },
   visible: {
     opacity: 1,
     scale: 1,
     y: 0,
-    transition: {
-      duration: 0.5,
-      ease: [0.22, 1, 0.36, 1] as const,
-    },
+    transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] as const },
   },
 };
 
 const slideInLeft: Variants = {
-  hidden: {
-    opacity: 0,
-    x: -60,
-  },
+  hidden: { opacity: 0, x: -60 },
   visible: {
     opacity: 1,
     x: 0,
-    transition: {
-      duration: 0.6,
-      ease: [0.22, 1, 0.36, 1] as const,
-    },
+    transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] as const },
   },
 };
 
 const slideInRight: Variants = {
-  hidden: {
-    opacity: 0,
-    x: 60,
-  },
+  hidden: { opacity: 0, x: 60 },
   visible: {
     opacity: 1,
     x: 0,
-    transition: {
-      duration: 0.6,
-      ease: [0.22, 1, 0.36, 1] as const,
-    },
+    transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] as const },
   },
 };
 
-// Programs data
+// Keep all your existing data arrays (programs, getInvolvedCards)
 const programs = [
   {
     icon: Ambulance,
@@ -138,7 +109,6 @@ const programs = [
   },
 ];
 
-// Get Involved data
 const getInvolvedCards = [
   {
     img: "/volunteer.png",
@@ -169,29 +139,92 @@ const getInvolvedCards = [
   },
 ];
 
-// News data
-const newsItems = [
+// Fallback news if no blogs published yet
+const fallbackNews = [
   {
     img: "/blog1.jpg",
     date: "yesterday",
     title: "Community Health Camp Reaches Over 500 Families",
-    desc: "Last weekend in Oruku, our team provided free medical checkups, health education, and essential supplies to more than 500 families. It was a powerful reminder of what compassion and collaboration can achieve.",
+    desc: "Last weekend in Oruku, our team provided free medical checkups, health education, and essential supplies to more than 500 families.",
+    slug: "community-health-camp-2024",
+    _id: "fallback-blog-1",
+    coverImage: "/blog1.jpg",
+    excerpt:
+      "Last weekend in Oruku, our team provided free medical checkups, health education, and essential supplies to more than 500 families.",
+    createdAt: new Date().toISOString(),
   },
   {
     img: "/blog2.jpg",
     date: "7hrs ago",
     title: "New Partnership Expands Our Medical Outreach",
-    desc: "We're excited to announce a new partnership with local hospitals and pharmacies, allowing us to reach more underserved communities with vital healthcare services and medications.",
+    desc: "We're excited to announce a new partnership with local hospitals and pharmacies, allowing us to reach more underserved communities.",
+    slug: "new-partnership-medical-outreach-2024",
+    _id: "fallback-blog-2",
+    coverImage: "/blog2.jpg",
+    excerpt:
+      "We're excited to announce a new partnership with local hospitals and pharmacies, allowing us to reach more underserved communities.",
+    createdAt: new Date().toISOString(),
   },
   {
     img: "/blog3.jpg",
     date: "20th October 2024",
     title: "Mental Health Awareness Walk Inspires Change",
-    desc: "Over 200 participants joined our recent walk to raise awareness about mental health. The event sparked conversations, built solidarity, and reminded us that healing begins with understanding.",
+    desc: "Over 200 participants joined our recent walk to raise awareness about mental health. The event sparked conversations and built solidarity.",
+    slug: "mental-health-awareness-walk-2024",
+    _id: "fallback-blog-3",
+    coverImage: "/blog3.jpg",
+    excerpt:
+      "Over 200 participants joined our recent walk to raise awareness about mental health. The event sparked conversations and built solidarity.",
+    createdAt: new Date().toISOString(),
   },
 ];
 
 export default function Home() {
+  const [blogPosts, setBlogPosts] = useState<any[]>([]);
+  const [loadingBlogs, setLoadingBlogs] = useState(true);
+
+  useEffect(() => {
+    fetchLatestBlogs();
+  }, []);
+
+  const fetchLatestBlogs = async () => {
+    try {
+      const res = await fetch("/api/blog?status=published&limit=3");
+      const data = await res.json();
+
+      if (data.success && data.data.blogs && data.data.blogs.length > 0) {
+        setBlogPosts(data.data.blogs);
+      } else {
+        setBlogPosts(fallbackNews);
+      }
+    } catch (error) {
+      console.error("Failed to fetch blogs:", error);
+      setBlogPosts(fallbackNews);
+    } finally {
+      setLoadingBlogs(false);
+    }
+  };
+
+  const formatDate = (dateString: string) => {
+    if (!dateString) return "Recently";
+
+    const date = new Date(dateString);
+    const now = new Date();
+    const diffMs = now.getTime() - date.getTime();
+    const diffHrs = Math.floor(diffMs / (1000 * 60 * 60));
+    const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+
+    if (diffHrs < 1) return "Just now";
+    if (diffHrs < 24) return `${diffHrs}hrs ago`;
+    if (diffDays === 1) return "Yesterday";
+    if (diffDays < 7) return `${diffDays} days ago`;
+
+    return date.toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    });
+  };
   return (
     <main className="overflow-hidden">
       {/* Hero Section */}
@@ -831,75 +864,88 @@ export default function Home() {
             </p>
           </motion.div>
 
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.1 }}
-            variants={staggerContainer}
-            className="grid grid-cols-1 lg:grid-cols-3 gap-8"
-          >
-            {newsItems.map((blog, index) => (
-              <motion.div key={index} variants={scaleIn}>
-                <motion.div whileHover={{ y: -10 }}>
-                  <Card className="w-full shadow-xl hover:shadow-2xl transition-all duration-300 border-2 border-green-100 group overflow-hidden h-full pt-0 flex flex-col bg-white">
-                    <CardHeader className="p-0 relative">
-                      <div className="relative overflow-hidden h-56">
-                        <motion.div
-                          whileHover={{ scale: 1.1 }}
-                          transition={{ duration: 0.6 }}
-                          className="w-full h-full"
-                        >
-                          <Image
-                            className="w-full h-full object-cover"
-                            alt={blog.title}
-                            src={blog.img}
-                            width={500}
-                            height={300}
-                          />
-                        </motion.div>
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                      </div>
-                      <span className="absolute top-4 right-4 bg-white/95 backdrop-blur-sm px-3 py-1.5 rounded-full text-xs font-semibold text-green-700 shadow-lg">
-                        {blog.date}
-                      </span>
-                    </CardHeader>
-
-                    <CardHeader className="flex-1 px-6 pt-6">
-                      <CardTitle className="text-xl font-bold text-green-800 leading-tight group-hover:text-green-700 transition-colors">
-                        {blog.title}
-                      </CardTitle>
-                    </CardHeader>
-
-                    <CardContent className="text-gray-700 leading-relaxed text-base px-6 pb-6">
-                      <p className="line-clamp-3 mb-4">{blog.desc}</p>
-
-                      <motion.div
-                        whileHover={{ x: 5 }}
-                        className="flex justify-center"
-                      >
-                        <Button
-                          asChild
-                          className="p-0 h-auto"
-                          size="lg"
-                          variant="link"
-                        >
-                          <Link
-                            href="/blog"
-                            className="flex items-center gap-2 text-green-700 hover:text-green-800 group/link"
+          {loadingBlogs ? (
+            <div className="flex justify-center items-center py-20">
+              <div className="animate-spin rounded-full h-12 w-12 border-4 border-green-600 border-t-transparent"></div>
+            </div>
+          ) : (
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.1 }}
+              variants={staggerContainer}
+              className="grid grid-cols-1 lg:grid-cols-3 gap-8"
+            >
+              {blogPosts.map((blog, index) => (
+                <motion.div
+                  key={blog._id || blog.slug || index}
+                  variants={scaleIn}
+                >
+                  <motion.div whileHover={{ y: -10 }}>
+                    <Card className="w-full shadow-xl hover:shadow-2xl transition-all duration-300 border-2 border-green-100 group overflow-hidden h-full pt-0 flex flex-col bg-white">
+                      <CardHeader className="p-0 relative">
+                        <div className="relative overflow-hidden h-56">
+                          <motion.div
+                            whileHover={{ scale: 1.1 }}
+                            transition={{ duration: 0.6 }}
+                            className="w-full h-full"
                           >
-                            <span className="font-semibold">
-                              Continue Reading
-                            </span>
-                            <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
-                          </Link>
-                        </Button>
-                      </motion.div>
-                    </CardContent>
-                  </Card>
+                            <Image
+                              className="w-full h-full object-cover"
+                              alt={blog.title}
+                              src={blog.coverImage || blog.img || "/blog1.jpg"}
+                              width={500}
+                              height={300}
+                            />
+                          </motion.div>
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                        </div>
+                        <span className="absolute top-4 right-4 bg-white/95 backdrop-blur-sm px-3 py-1.5 rounded-full text-xs font-semibold text-green-700 shadow-lg">
+                          {formatDate(
+                            blog.publishedAt || blog.createdAt || blog.date
+                          )}
+                        </span>
+                      </CardHeader>
+
+                      <CardHeader className="flex-1 px-6 pt-6">
+                        <CardTitle className="text-xl font-bold text-green-800 leading-tight group-hover:text-green-700 transition-colors">
+                          {blog.title}
+                        </CardTitle>
+                      </CardHeader>
+
+                      <CardContent className="text-gray-700 leading-relaxed text-base px-6 pb-6">
+                        <p className="line-clamp-3 mb-4">
+                          {blog.excerpt || blog.desc}
+                        </p>
+
+                        <motion.div
+                          whileHover={{ x: 5 }}
+                          className="flex justify-center"
+                        >
+                          <Button
+                            asChild
+                            className="p-0 h-auto"
+                            size="lg"
+                            variant="link"
+                          >
+                            <Link
+                              href={blog.slug ? `/blog/${blog.slug}` : "/blog"}
+                              className="flex items-center gap-2 text-green-700 hover:text-green-800 group/link"
+                            >
+                              <span className="font-semibold">
+                                Continue Reading
+                              </span>
+                              <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
+                            </Link>
+                          </Button>
+                        </motion.div>
+                      </CardContent>
+                    </Card>
+                  </motion.div>
                 </motion.div>
-              </motion.div>
-            ))}
-          </motion.div>
+              ))}
+            </motion.div>
+          )}
 
           <motion.div
             initial="hidden"

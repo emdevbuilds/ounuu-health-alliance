@@ -2,7 +2,7 @@ import { NextRequest } from "next/server";
 import { connectDB } from "@/lib/mongodb";
 import Donation from "@/models/Donation";
 import { ApiResponse } from "@/lib/api-response";
-import { donationSchema } from "@/app/donation/schema";
+import { donationSchema } from "@/app/(website)/donation/schema";
 
 export async function POST(req: NextRequest) {
   try {
