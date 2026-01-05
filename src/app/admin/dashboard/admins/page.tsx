@@ -81,7 +81,7 @@ export default function AdminUsersPage() {
   };
 
   const handleDeleteAdmin = async (id: string, email: string) => {
-    if (email === "admin@ounuu.org") {
+    if (email === "obiumunna2024@gmail.com") {
       toast.error("Cannot delete the main admin account!");
       return;
     }
@@ -252,7 +252,7 @@ export default function AdminUsersPage() {
                       >
                         {admin.isActive ? "Deactivate" : "Activate"}
                       </Button>
-                      {admin.email !== "admin@ounuu.org" && (
+                      {admin.email !== "obiumunna2024@gmail.com" && (
                         <Button
                           variant="outline"
                           size="sm"

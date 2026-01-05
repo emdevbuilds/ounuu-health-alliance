@@ -15,7 +15,6 @@ import {
   LogOut,
   Menu,
   X,
-  Shield,
   UserCog,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -74,10 +73,36 @@ export default function AdminDashboardLayout({
   const pathname = usePathname();
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [user, setUser] = useState<any>(null);
+  const [loading, setLoading] = useState(true);
 
+  // Fetch current admin user details
   useEffect(() => {
-    setUser({ name: "Admin", email: "admin@ounuu.org" });
+    fetchCurrentAdmin();
   }, []);
+
+  const fetchCurrentAdmin = async () => {
+    try {
+      const res = await fetch("/api/admin/me");
+      const data = await res.json();
+
+      if (data.success && data.data?.admin) {
+        setUser({
+          name: data.data.admin.name,
+          email: data.data.admin.email,
+          role: data.data.admin.role,
+        });
+      } else {
+        // Fallback if API fails
+        setUser({ name: "Admin", email: "admin@ounuu.org" });
+      }
+    } catch (error) {
+      console.error("Failed to fetch admin details:", error);
+      // Fallback on error
+      setUser({ name: "Admin", email: "admin@ounuu.org" });
+    } finally {
+      setLoading(false);
+    }
+  };
 
   const handleLogout = async () => {
     try {
@@ -162,8 +187,28 @@ export default function AdminDashboardLayout({
           {/* User Info */}
           <div className="p-4 border-t border-green-700">
             <div className="bg-green-700/50 rounded-xl p-4 mb-3">
-              <p className="text-sm text-green-200 mb-1">Logged in as</p>
-              <p className="font-semibold">{user?.email || "Admin"}</p>
+              {loading ? (
+                <div className="space-y-2">
+                  <div className="h-3 bg-green-600/30 rounded animate-pulse w-20"></div>
+                  <div className="h-4 bg-green-600/30 rounded animate-pulse w-32"></div>
+                  <div className="h-3 bg-green-600/30 rounded animate-pulse w-24"></div>
+                </div>
+              ) : (
+                <>
+                  <p className="text-sm text-green-200 mb-1">Logged in as</p>
+                  <p className="font-semibold text-white truncate">
+                    {user?.name || "Admin"}
+                  </p>
+                  <p className="text-xs text-green-300 truncate">
+                    {user?.email || "admin@ounuu.org"}
+                  </p>
+                  {user?.role && (
+                    <span className="inline-block mt-2 px-2 py-1 bg-green-600 text-white text-xs font-medium rounded-full">
+                      {user.role.replace("_", " ").toUpperCase()}
+                    </span>
+                  )}
+                </>
+              )}
             </div>
             <Button
               onClick={handleLogout}
