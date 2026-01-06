@@ -64,6 +64,12 @@ const navigation = [
   },
 ];
 
+interface AdminUser {
+  name: string;
+  email: string;
+  role: string;
+}
+
 export default function AdminDashboardLayout({
   children,
 }: {
@@ -72,17 +78,23 @@ export default function AdminDashboardLayout({
   const router = useRouter();
   const pathname = usePathname();
   const [sidebarOpen, setSidebarOpen] = useState(false);
-  const [user, setUser] = useState<any>(null);
+  const [user, setUser] = useState<AdminUser | null>(null);
   const [loading, setLoading] = useState(true);
 
-  // Fetch current admin user details
   useEffect(() => {
     fetchCurrentAdmin();
   }, []);
 
   const fetchCurrentAdmin = async () => {
     try {
-      const res = await fetch("/api/admin/me");
+      const res = await fetch("/api/admin/me", {
+        credentials: "include",
+      });
+
+      if (!res.ok) {
+        throw new Error("Failed to fetch");
+      }
+
       const data = await res.json();
 
       if (data.success && data.data?.admin) {
@@ -92,13 +104,13 @@ export default function AdminDashboardLayout({
           role: data.data.admin.role,
         });
       } else {
-        // Fallback if API fails
-        setUser({ name: "Admin", email: "admin@ounuu.org" });
+        // Fallback
+        setUser({ name: "Admin", email: "admin@ounuu.org", role: "admin" });
       }
     } catch (error) {
-      console.error("Failed to fetch admin details:", error);
-      // Fallback on error
-      setUser({ name: "Admin", email: "admin@ounuu.org" });
+      console.error("Failed to fetch admin:", error);
+      // Fallback
+      setUser({ name: "Admin", email: "admin@ounuu.org", role: "admin" });
     } finally {
       setLoading(false);
     }
@@ -138,7 +150,7 @@ export default function AdminDashboardLayout({
           {/* Logo */}
           <div className="flex items-center justify-between p-6 border-b border-green-700">
             <Link href="/" className="flex items-center gap-3">
-              <div className="">
+              <div>
                 <Image
                   className="w-14 h-14 md:w-18 md:h-18"
                   alt="OUNUU Logo"
@@ -197,10 +209,10 @@ export default function AdminDashboardLayout({
                 <>
                   <p className="text-sm text-green-200 mb-1">Logged in as</p>
                   <p className="font-semibold text-white truncate">
-                    {user?.name || "Admin"}
+                    {user?.name}
                   </p>
                   <p className="text-xs text-green-300 truncate">
-                    {user?.email || "admin@ounuu.org"}
+                    {user?.email}
                   </p>
                   {user?.role && (
                     <span className="inline-block mt-2 px-2 py-1 bg-green-600 text-white text-xs font-medium rounded-full">

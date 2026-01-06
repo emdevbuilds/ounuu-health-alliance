@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextRequest } from "next/server";
 import { connectDB } from "@/lib/mongodb";
 import Admin from "@/models/Admin";
 import { ApiResponse } from "@/lib/api-response";
@@ -6,14 +6,14 @@ import { requireAuth } from "@/lib/auth";
 
 export async function GET(req: NextRequest) {
   try {
-    // Get authenticated admin email
-    const adminEmail = await requireAuth();
+    // Get authenticated session (throws error if not authenticated)
+    const session = await requireAuth();
 
     // Connect to database
     await connectDB();
 
-    // Find admin by email
-    const admin = await Admin.findOne({ email: adminEmail })
+    // Find admin by email from session
+    const admin = await Admin.findOne({ email: session.email })
       .select("name email role isActive")
       .lean();
 
@@ -31,12 +31,10 @@ export async function GET(req: NextRequest) {
       },
     });
   } catch (err: any) {
-    console.error("Admin /me error:", err);
-
     if (err.message === "Unauthorized") {
       return ApiResponse.error("Unauthorized", 401);
     }
-
+    console.error("Admin /me error:", err);
     return ApiResponse.error("Failed to fetch admin details", 500);
   }
 }
