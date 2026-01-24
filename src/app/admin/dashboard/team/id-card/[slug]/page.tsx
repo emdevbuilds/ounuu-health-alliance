@@ -309,7 +309,7 @@ export default function IDCardPage() {
             <div className="flex items-center justify-between text-white/80 text-xs">
               <span>📧 {member.contact.email.split("@")[0]}...</span>
               <span>📞 {member.contact.phone.slice(0, 9)}...</span>
-              <span>Valid • 2025</span>
+              <span>Valid • {new Date().getFullYear()}</span>
             </div>
           </div>
 

@@ -1,5 +1,37 @@
 export const members = [
   {
+    slug: "godwin-eziechina-chukwu",
+    title: "Mr",
+    role: "Founder",
+    name: "Godwin Eziechina Chukwu",
+    contact: {
+      email: "chukwuit@gmail.com",
+      phone: "",
+    },
+    picture: "/team/mr-godwin-eziechina-chukwu.jpeg",
+    intro:
+      "Godwin Eziechina Chukwu is a visionary entrepreneur, philanthropist, and community leader. He has spearheaded numerous initiatives that have positively impacted individuals and communities, demonstrating resilience, innovation, and a passion for social development.",
+    biography:
+      "Born in Nigeria, Godwin Eziechina Chukwu is a robust and forward-thinking entrepreneur whose career has been defined by leadership, innovation, and service. Over the years, he has successfully launched and managed initiatives that foster economic growth, empower communities, and create opportunities for the less privileged. His philanthropic efforts reflect a deep commitment to social responsibility, while his entrepreneurial ventures showcase his ability to transform ideas into sustainable impact. As a community leader, Godwin continues to inspire others through mentorship, advocacy, and strategic partnerships aimed at driving progress and inclusivity.",
+    education: [
+      {
+        school: "",
+        qualification: "",
+        year: null,
+      },
+    ],
+    workExperience: [
+      "Founder and leader of multiple entrepreneurial initiatives.",
+      "Philanthropist with a focus on community empowerment.",
+      "Community leader advocating for social and economic development.",
+    ],
+    social: {
+      linkedin: "",
+      twitter: "",
+      facebook: "",
+    },
+  },
+  {
     slug: "benjamin-nwaforcha-nwakelu",
     title: "Dr",
     role: "Chairman",
@@ -161,7 +193,7 @@ export const members = [
       email: "accapellah2@gmail.com",
       phone: "+2348038067948",
     },
-    picture: "/team/no-profile.jpg",
+    picture: "/team/dr-duru-uchenna-stephen.jpeg",
     intro:
       "Dr. Duru Uchenna Stephen is an experienced Medical Officer with a strong background in hospital and healthcare practice. Known for his high sense of responsibility, excellent communication skills, and ability to manage diverse patient conditions, he is passionate about self-development and thrives in collaborative medical environments.",
     biography:
@@ -341,6 +373,60 @@ export const members = [
   },
 
   {
+    slug: "austin-abu-jane-uchenna",
+    title: "Mrs",
+    role: "Member Medical Team",
+    name: "Austin-Abu Jane Uchenna",
+    contact: {
+      email: "jannyabu@aefutha.gov.ng",
+      phone: "+2348035493644",
+    },
+    picture: "/team/mrs-austin-abu-jane-uchenna.png",
+    intro:
+      "Mrs. Austin-Abu Jane Uchenna is an ISO 15189:2022 certified Medical Laboratory Scientist with 25 years of experience. She is dedicated to applying medical laboratory standards to deliver accurate, reliable, and quality reports that enhance patient care and safety.",
+    biography:
+      "With over two decades of professional expertise, Mrs. Austin-Abu Jane Uchenna has established herself as a leader in medical laboratory science. She currently serves as the Director of Medical Laboratory Services and Head of Department at Alex Ekwueme Federal University Teaching Hospital Abakaliki (AEFUTHA), Ebonyi State, Nigeria. Her career is marked by contributions to policy formulation, quality assurance, and patient safety. She is pursuing a Ph.D. at the University of Nigeria, building on her PGD in Medical Laboratory Science and MSc in Haematology. A passionate mentor and leader, she has held key positions in professional associations, unions, and community organizations, earning multiple awards of excellence in leadership. Her interests lie in mentorship, quality leadership, and advancing laboratory medicine standards.",
+    education: [
+      {
+        school: "University of Nigeria",
+        qualification: "Ph.D in Medical Laboratory Science (in progress)",
+        year: null,
+      },
+      {
+        school: "University of Nigeria",
+        qualification: "PGD in Medical Laboratory Science",
+        year: "2004",
+      },
+      {
+        school: "University of Nigeria",
+        qualification: "M.Sc in Haematology",
+        year: "2014",
+      },
+      {
+        school: "St. Cyprian's Special Science School, Nsukka",
+        qualification: "Secondary School Certificate (SSCE)",
+        year: null,
+      },
+      {
+        school: "O'Connor Street Primary School, Asata Enugu",
+        qualification: "First School Leaving Certificate (FSLC)",
+        year: "1983",
+      },
+    ],
+    workExperience: [
+      "Director of Medical Laboratory Services, Alex Ekwueme Federal University Teaching Hospital Abakaliki (AEFUTHA).",
+      "Head of Department, Medical Laboratory Services, AEFUTHA.",
+      "Policy formulation and implementation to ensure patient safety and satisfaction.",
+      "Leadership roles in professional associations, unions, and community organizations.",
+    ],
+    social: {
+      linkedin: "",
+      twitter: "",
+      facebook: "",
+    },
+  },
+
+  {
     slug: "onyeso-cordelia-ihunanyachi",
     title: "Nurse",
     role: "Member Medical Team",
@@ -349,7 +435,7 @@ export const members = [
       email: "ihuu4love2000@gmail.com",
       phone: "+2348126623336",
     },
-    picture: "/team/onyeso-cordelia-ihunanyachi.png",
+    picture: "/team/nurse-onyeso-cordelia-ihunanyachi.jpeg",
     intro:
       "Cordelia Ihunanyachi Onyeso is a passionate Nurse Midwife dedicated to life-saving care and safe deliveries. She currently serves at Ananda Marga Universal Relief Team and has over a decade of experience in maternal health and community-based nursing.",
     biography:
@@ -446,7 +532,7 @@ export const members = [
       email: "ekenechukwusabinus@gamil.com",
       phone: "+2348068441558",
     },
-    picture: "/team/no-profile.jpg",
+    picture: "/team/mr-odoh-ekenechukwu-gabriel.jpeg",
     intro:
       "Odoh Ekenechukwu Gabriel is a passionate paediatric physiotherapist with a creative approach to holistic rehabilitation. He currently serves at Alex Ekwueme Federal University Teaching Hospital Abakaliki, where he specializes in child-friendly therapy and evidence-based physiotherapy practices.",
     biography:
@@ -482,6 +568,194 @@ export const members = [
       "Physiotherapist at Alex Ekwueme Federal University Teaching Hospital, Abakaliki.",
       "Physiotherapist at Symbol Hospital, Awkunan, Enugu (2010–2011).",
       "Physiotherapist at St. Joseph Institute of Physiotherapy, Enugu (2010).",
+    ],
+    social: {
+      linkedin: "",
+      twitter: "",
+      facebook: "",
+    },
+  },
+
+  {
+    slug: "robert-ifeanacho-mbah",
+    title: "Chief",
+    role: "Head of Elders Counsel, Trustees Member",
+    name: "Robert Ifeanacho Mbah",
+    contact: {
+      email: "robertmbah4@gmail.com",
+      phone: "+2348033002156",
+    },
+    picture: "/team/chief-robert-ifeanacho-mbah.jpeg",
+    intro:
+      "Chief Robert Ifeanacho Mbah (Sir Robby) is a distinguished Estate Surveyor and Valuer, Knight of the Catholic Church, and respected community leader. He brings decades of professional expertise and spiritual guidance to his role as Head of Elders Counsel and Trustees Member of Obi Umunna Na Umuada United.",
+    biography:
+      "Chief Robert Ifeanacho Mbah, fondly known as Sir Robby, is a graduate of Estate Management and an Associate Member of the Nigerian Institution of Estate Surveyors & Valuers. He is a Registered Estate Surveyor and Valuer (ESV) and a Knight of the Catholic Church. As founder and consultant at R.I. Mbah & Co Estate Surveyors and Valuers, he has led projects in feasibility and viability appraisal, project risk analysis, property management, and development. His firm has worked extensively with Federal and State Governments on valuation for rating, sales, compensation, acquisition, oil spillage, mortgage, mergers, and capital value opinions. He was a pioneer member of the Lagos State Rent Tribunal, serving as Vice Chairman alongside magistrates, landlords, and tenant representatives. Beyond his professional achievements, Chief Mbah is deeply committed to mentoring youths, counseling them on life and excellence in their chosen fields. Married to a distinguished academic, he is blessed with five children and grandchildren. His leadership in Obi Umunna Na Umuada United reflects his dedication to community service, tradition, and faith.",
+    education: [
+      {
+        school: "University (Estate Management program)",
+        qualification: "Graduate in Estate Management",
+        year: null,
+      },
+      {
+        school: "Nigerian Institution of Estate Surveyors & Valuers",
+        qualification: "Associate Membership",
+        year: null,
+      },
+    ],
+    workExperience: [
+      "Consultant Estate Surveyor & Valuer, R.I. Mbah & Co.",
+      "Feasibility & Viability Appraisal and Project Risk Analyst.",
+      "Property Manager and Developer with diverse government experience.",
+      "Pioneer member and Vice Chairman, Lagos State Rent Tribunal.",
+      "Head of Elders Counsel and Trustees Member, Obi Umunna Na Umuada United.",
+      "Knight of the Catholic Church, actively involved in faith and community leadership.",
+    ],
+    social: {
+      linkedin: "",
+      twitter: "",
+      facebook: "",
+    },
+  },
+
+  {
+    slug: "joseph-ndubuisi-paul",
+    title: "Mr",
+    role: "Trustee Member, Obi Umunna Na Umuada United",
+    name: "Joseph Ndubuisi Paul",
+    contact: {
+      email: "Ndubuisipaul94@gmail.com",
+      phone: "+13234557322",
+    },
+    picture: "/team/mr-joseph-ndubuisi-paul.jpeg",
+    intro:
+      "Joseph Ndubuisi Paul is a multi-talented sportsman, coach, music artist, entrepreneur, farmer, and philanthropist. With an impressive background in athletics and community service, he has represented Nigeria internationally and continues to inspire through his diverse contributions.",
+    biography:
+      "Joseph Ndubuisi Paul is a dynamic individual whose career spans sports, music, entrepreneurship, farming, and philanthropy. He began his education at St. Augustine Catholic Primary School, Odo-Egbo, Ijebu-Ode, Ogun State, and later attended Adeola Odutola College, Ijebu-Ode, for his secondary studies. As a gifted athlete, he represented Nigeria in international competitions across weightlifting, races, javelin, and discus, earning multiple medals for the nation. Beyond athletics, Joseph is the Chief Executive Officer (CEO) of Runcity LLC, demonstrating his entrepreneurial vision and leadership. His creative side shines through his work as a music artist, with numerous songs released to audiences. Deeply committed to community development, he engages in farming and philanthropy, while mentoring young athletes as a coach. As a trustee member of Obi Umunna Na Umuada United, he contributes to the organization’s mission and growth. Through his achievements in sports, business, music, and service, Joseph Ndubuisi Paul continues to make a lasting impact on society.",
+    education: [
+      {
+        school:
+          "St. Augustine Catholic Primary School, Odo-Egbo, Ijebu-Ode, Ogun State",
+        qualification: "First School Leaving Certificate",
+        year: null,
+      },
+      {
+        school: "Adeola Odutola College, Ijebu-Ode, Ogun State",
+        qualification: "Secondary School Certificate",
+        year: null,
+      },
+    ],
+    workExperience: [
+      "Represented Nigeria in international competitions (weightlifting, races, javelin, discus), earning multiple medals.",
+      "Chief Executive Officer (CEO) of Runcity LLC.",
+      "Music artist with numerous songs released.",
+      "Sportsman and coach, mentoring young athletes.",
+      "Farmer and philanthropist engaged in community development.",
+      "Trustee Member of Obi Umunna Na Umuada United.",
+    ],
+    social: {
+      linkedin: "",
+      twitter: "",
+      facebook: "",
+    },
+  },
+
+  {
+    slug: "duru-festus-uchechukwu",
+    title: "Mr",
+    role: "Director of Human Resources and Monitoring Directorate, Trustees Member",
+    name: "Duru Festus Uchechukwu Fcgm",
+    contact: {
+      email: "durundu@gmail.com",
+      phone: "",
+    },
+    picture: "/team/mr-duru-festus-uchechukwu.jpeg",
+    intro:
+      "Duru Festus Uchechukwu is a prolific writer, philanthropist, entrepreneur, and Fellow of Corporate Governance and Management. He is widely recognized for his leadership, authorship, and dedication to community development.",
+    biography:
+      "Mr. Duru Festus Uchechukwu Fcgm is a multifaceted professional whose career spans farming, writing, philanthropy, entrepreneurship, and management consultancy. He is the author of 'Causes of Business Failure in Nigeria,' which earned him the 2012 Good Authorship Award. A Fellow of Corporate Governance and Management, Festus has consistently demonstrated excellence in leadership and innovation. During his National Youth Service Corps (NYSC), he won the 'Best Corps Member Award' for initiating and establishing a Free Newspapers and Magazines Reading Center in Ikot Edor, Onna LGA, Akwa Ibom State, supported by ExxonMobil Producing Nigeria Unlimited. He has served as a lecturer and is the Secretary General of Eunice Divine Care Foundation, an NGO dedicated to supporting the girl child, widows, and indigent persons. Festus has organized and participated in numerous seminars, workshops, and youth empowerment programs. His professional journey includes work with the Central Bank of Nigeria (CBN) and the African Leadership Forum (ALF) Entrepreneurship Development Center (EDC). He is also associated with Silent Properties Limited. In 2023, he contested as a candidate for Nigeria’s Federal House of Representatives. Currently, he serves as Director of Human Resources and Monitoring Directorate and Trustee Member of Obi Umunna Na Umuada United, continuing his commitment to leadership and service.",
+    education: [
+      {
+        school: "Corporate Governance and Management Institute",
+        qualification: "Fellow of Corporate Governance and Management (Fcgm)",
+        year: null,
+      },
+    ],
+    workExperience: [
+      "Farmer, prolific writer, philanthropist, author, and entrepreneur.",
+      "Winner of the 2012 Good Authorship Award for 'Causes of Business Failure in Nigeria'.",
+      "Federal House of Representatives Candidate, Nigeria (2023).",
+      "Best Corps Member Award during NYSC for initiating a Free Newspapers and Magazines Reading Center.",
+      "Lecturer and Secretary General of Eunice Divine Care Foundation.",
+      "Organizer and participant in seminars, workshops, trainings, and youth empowerment programs.",
+      "Management Consultant with experience at CBN and ALF Entrepreneurship Development Center.",
+      "Associated with Silent Properties Limited.",
+      "Director of Human Resources and Monitoring Directorate, Obi Umunna Na Umuada United.",
+      "Trustee Member of Obi Umunna Na Umuada United.",
+    ],
+    social: {
+      linkedin: "",
+      twitter: "",
+      facebook: "",
+    },
+  },
+
+  {
+    slug: "lilianbosco-chinonye-opara",
+    title: "Sr",
+    role: "Treasurer, Trustees Member",
+    name: "LilianBosco Chinonye Opara",
+    contact: {
+      email: "lilianbosco1@gmail.com",
+      phone: "",
+    },
+    picture: "/team/sr-lilianbosco-chinonye-opara.jpeg",
+    intro:
+      "Sr. LilianBosco Chinonye Opara is a dedicated member of the Missionary Sisters of the Blessed Sacrament (MSBS), serving as Treasurer and Trustee of Obi Umunna Na Umuada United. She combines her spiritual vocation with leadership and mentorship roles in education and community service.",
+    biography:
+      "Born and raised in Lagos, Sr. LilianBosco Chinonye Opara hails from Aboh Mbaise in Imo State, Nigeria. A committed member of the Missionary Sisters of the Blessed Sacrament (MSBS), she has devoted her life to faith, service, and leadership. She currently serves as Treasurer and Trustee of Obi Umunna Na Umuada United, contributing to the organization’s financial stewardship and mission. Professionally, she has held roles as General Secretary of the Missionary Sisters of the Blessed Sacrament and as a School Counsellor at Mater Misericordiae School, where she guided students in personal and academic development. With a Ph.D. in view, Sr. LilianBosco continues to pursue academic excellence while remaining deeply engaged in mentorship, community service, and spiritual leadership.",
+    education: [
+      {
+        school: "University (specific institution not provided)",
+        qualification: "Ph.D in progress",
+        year: null,
+      },
+    ],
+    workExperience: [
+      "General Secretary, Missionary Sisters of the Blessed Sacrament (MSBS).",
+      "School Counsellor, Mater Misericordiae School.",
+      "Treasurer and Trustee Member, Obi Umunna Na Umuada United.",
+    ],
+    social: {
+      linkedin: "",
+      twitter: "",
+      facebook: "",
+    },
+  },
+
+  {
+    slug: "glory-ndukwe",
+    title: "Ms",
+    role: "Trustees Member",
+    name: "Glory Ndukwe",
+    contact: {
+      email: "gloryndukwe446@gmail.com",
+      phone: "",
+    },
+    picture: "/team/ms-glory-ndukwe.jpeg",
+    intro:
+      "Glory Ndukwe is an entrepreneur and business leader based in northern Italy. She serves as a Trustee Member of Obi Umunna Na Umuada United, contributing to the organization’s mission and growth.",
+    biography:
+      "Glory Ndukwe is a dedicated entrepreneur whose business activities are rooted in northern Italy. While she maintains privacy regarding her personal biography and educational background, her professional and community contributions speak volumes. As a Trustee Member of Obi Umunna Na Umuada United, she plays a vital role in supporting the organization’s vision and initiatives. Her entrepreneurial drive and international presence reflect her commitment to both business excellence and community development.",
+    education: [
+      {
+        school: "",
+        qualification: "Private",
+        year: null,
+      },
+    ],
+    workExperience: [
+      "Entrepreneur and business leader based in northern Italy.",
+      "Trustee Member of Obi Umunna Na Umuada United.",
     ],
     social: {
       linkedin: "",

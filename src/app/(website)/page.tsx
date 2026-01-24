@@ -786,7 +786,7 @@ export default function Home() {
 
                     <CardHeader className="pb-6 relative z-10 text-center">
                       <CardTitle className="text-xl font-bold text-green-800 leading-tight py-2">
-                        {member.name}
+                        {member.title} {member.name}
                       </CardTitle>
                       <CardDescription className="font-semibold text-base text-green-600 py-2">
                         {member.role}
@@ -902,7 +902,7 @@ export default function Home() {
                         </div>
                         <span className="absolute top-4 right-4 bg-white/95 backdrop-blur-sm px-3 py-1.5 rounded-full text-xs font-semibold text-green-700 shadow-lg">
                           {formatDate(
-                            blog.publishedAt || blog.createdAt || blog.date
+                            blog.publishedAt || blog.createdAt || blog.date,
                           )}
                         </span>
                       </CardHeader>

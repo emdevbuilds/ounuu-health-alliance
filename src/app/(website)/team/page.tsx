@@ -164,7 +164,7 @@ const Page = () => {
 
                     <CardHeader className="pb-6 relative z-10 text-center">
                       <CardTitle className="text-xl font-bold text-green-800 leading-tight py-2">
-                        {member.name}
+                        {member.title} {member.name}
                       </CardTitle>
                       <CardDescription className="font-semibold text-base text-green-600 py-2">
                         {member.role}
