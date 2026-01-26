@@ -89,7 +89,7 @@ export default function AdminLoginPage() {
             >
               <Image
                 className="w-20 h-20 md:w-24 md:h-24"
-                alt="OUNUU Logo"
+                alt="Obiumunna Na Umuada Health Alliance Logo"
                 src="/logo.svg"
                 width={60}
                 height={60}
@@ -100,7 +100,9 @@ export default function AdminLoginPage() {
             <h1 className="text-3xl font-bold text-green-800 mb-2">
               Admin Portal
             </h1>
-            <p className="text-gray-600">OUNUU Health Alliance Dashboard</p>
+            <p className="text-gray-600">
+              Obiumunna Na Umuada Health Alliance Dashboard
+            </p>
           </div>
 
           {/* Form */}
@@ -188,7 +190,7 @@ export default function AdminLoginPage() {
 
         {/* Footer */}
         <p className="text-center text-sm text-gray-600 mt-6">
-          © {new Date().getFullYear()} OUNUU Health Alliance
+          © {new Date().getFullYear()} Obiumunna Na Umuada Health Alliance
         </p>
       </motion.div>
     </div>

@@ -3,8 +3,9 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 export const metadata: Metadata = {
-  title: "Admin Dashboard | OUNUU Health Alliance",
-  description: "Admin dashboard for managing OUNUU Health Alliance",
+  title: "Admin Dashboard | Obiumunna Na Umuada Health Alliance",
+  description:
+    "Admin dashboard for managing Obiumunna Na Umuada Health Alliance",
   robots: {
     index: false,
     follow: false,

@@ -129,7 +129,7 @@ export default function IDCardPage() {
                   </div>
                   <div>
                     <h2 className="text-white font-bold text-sm">
-                      OUNUU HEALTH ALLIANCE
+                      OBIUMUNNA NA UMUADA HEALTH ALLIANCE
                     </h2>
                     <p className="text-white/80 text-xs">Official Staff ID</p>
                   </div>
@@ -252,7 +252,7 @@ export default function IDCardPage() {
               </div>
               <div>
                 <h2 className="text-white font-bold text-sm">
-                  OUNUU HEALTH ALLIANCE
+                  OBIUMUNNA NA UMUADA HEALTH ALLIANCE
                 </h2>
                 <p className="text-white/80 text-xs">Official Staff ID</p>
               </div>

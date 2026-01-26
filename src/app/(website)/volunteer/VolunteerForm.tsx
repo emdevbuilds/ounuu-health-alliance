@@ -91,7 +91,7 @@ const VolunteerForm = () => {
           result.message || "Volunteer application submitted successfully!",
           {
             position: "top-center",
-          }
+          },
         );
         reset();
       } else {
@@ -100,7 +100,7 @@ const VolunteerForm = () => {
             "Failed to submit volunteer application. Please try again.",
           {
             position: "top-center",
-          }
+          },
         );
       }
     } catch (error) {
@@ -108,7 +108,7 @@ const VolunteerForm = () => {
         "Oops! Something went wrong on our end. Please try submitting the form again.",
         {
           position: "top-center",
-        }
+        },
       );
     }
   };
@@ -289,7 +289,7 @@ const VolunteerForm = () => {
                                   field.onChange([...field.value, day]);
                                 } else {
                                   field.onChange(
-                                    field.value.filter((d) => d !== day)
+                                    field.value.filter((d) => d !== day),
                                   );
                                 }
                               }}
@@ -442,8 +442,8 @@ const VolunteerForm = () => {
                           </FieldLabel>
                         </div>
                         <p className="text-sm text-gray-700 leading-relaxed">
-                          I consent to OUNUU Health Alliance using my
-                          information for volunteer coordination and
+                          I consent to Obiumunna Na Umuada Health Alliance using
+                          my information for volunteer coordination and
                           communication purposes. Your data will be kept secure
                           and confidential.
                         </p>

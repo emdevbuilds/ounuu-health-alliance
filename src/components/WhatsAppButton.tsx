@@ -6,7 +6,7 @@ interface WhatsAppButtonProps {
 }
 
 export function WhatsAppButton({
-  message = "Hello! I'm interested in OUNUU Health Alliance's healthcare services. How can I learn more or get involved?",
+  message = "Hello! I'm interested in Obiumunna Na Umuada Health Alliance's healthcare services. How can I learn more or get involved?",
   phoneNumber = "2348063289585",
 }: WhatsAppButtonProps) {
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;

@@ -154,7 +154,7 @@ const Contact = () => {
               <motion.div variants={scaleIn} className="space-y-6">
                 {/* Email */}
                 <motion.a
-                  href="mailto:obiumunnanaumuadahealthallianc@gmail.com"
+                  href="mailto:info@obiumunnanaumuadahealthalliance.com"
                   whileHover={{ x: 5 }}
                   className="flex items-start gap-4 p-6 bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl border-2 border-green-100 group hover:shadow-lg transition-all"
                 >
@@ -164,7 +164,7 @@ const Contact = () => {
                   <div className="flex-1">
                     <h3 className="font-semibold text-green-800 mb-1">Email</h3>
                     <p className="text-gray-700 break-all">
-                      obiumunnanaumuadahealthallianc@gmail.com
+                      info@obiumunnanaumuadahealthalliance.com
                     </p>
                   </div>
                 </motion.a>
@@ -281,7 +281,7 @@ const Contact = () => {
                   className="absolute top-0 left-0 w-full h-full border-0"
                   loading="lazy"
                   allowFullScreen
-                  title="OUNUU Health Alliance Office Location"
+                  title="Obiumunna Na Umuada Health Alliance Office Location"
                 ></iframe>
               </div>
             </div>

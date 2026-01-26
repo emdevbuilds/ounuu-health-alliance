@@ -105,12 +105,20 @@ export default function AdminDashboardLayout({
         });
       } else {
         // Fallback
-        setUser({ name: "Admin", email: "admin@ounuu.org", role: "admin" });
+        setUser({
+          name: "Admin",
+          email: "obiumunna2024@gmail.com",
+          role: "admin",
+        });
       }
     } catch (error) {
       console.error("Failed to fetch admin:", error);
       // Fallback
-      setUser({ name: "Admin", email: "admin@ounuu.org", role: "admin" });
+      setUser({
+        name: "Admin",
+        email: "obiumunna2024@gmail.com",
+        role: "admin",
+      });
     } finally {
       setLoading(false);
     }
@@ -153,7 +161,7 @@ export default function AdminDashboardLayout({
               <div>
                 <Image
                   className="w-14 h-14 md:w-18 md:h-18"
-                  alt="OUNUU Logo"
+                  alt="Obiumunna Na Umuada Health Alliance Logo"
                   src="/logo.svg"
                   width={60}
                   height={60}
@@ -161,7 +169,7 @@ export default function AdminDashboardLayout({
                 />
               </div>
               <div>
-                <h1 className="text-xl font-bold">OUNUU Admin</h1>
+                <h1 className="text-xl font-bold">Obiumunna Na Umuada Admin</h1>
                 <p className="text-xs text-green-200">Dashboard</p>
               </div>
             </Link>

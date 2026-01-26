@@ -157,7 +157,7 @@ const Navbar = () => {
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
             <Image
               className="w-14 h-14 md:w-14 md:h-14"
-              alt="OUNUU Logo"
+              alt="Obiumunna Na Umuada Logo"
               src="/logo.svg"
               width={60}
               height={60}

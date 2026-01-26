@@ -6,15 +6,15 @@
   --color-foreground: var(--foreground);
   /* --color-green: var(--green); */
   --color-green: oklch(80.738% 0.27116 142.7);
-  --color-green-50: rgb(174, 252, 178);
+  --color-green-50: #aefcb2;
   --color-green-100: oklch(90.622% 0.154 145.09);
   --color-green-200: oklch(87.859% 0.2064 144.37);
-  --color-green-300: oklch(85.812% 0.24679 143.66);
+  --color-green-300: #4cf754;
   --color-green-400: oklch(84.663% 0.27376 143.03);
-  --color-green-500: oklch(80.738% 0.27116 142.7);
+  --color-green-500: #0be814;
   --color-green-600: oklch(66.24% 0.22166 142.73);
-  --color-green-700: oklch(50.891% 0.16885 142.88);
-  --color-green-800: oklch(34.591% 0.11255 143.13);
+  --color-green-700: #057c0b;
+  --color-green-800: #034706;
   --color-green-900: oklch(15.54% 0.04772 142.85);
   --color-blue: oklch(47.112% 0.27611 265.95);
   --color-blue-50: oklch(85.655% 0.06702 279.3);

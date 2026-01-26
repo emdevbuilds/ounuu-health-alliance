@@ -375,7 +375,7 @@ const Page = () => {
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold text-green-900 mb-2">
-                    Why Partner With OUNUU?
+                    Why Partner With Obiumunna Na Umuada?
                   </h3>
                   <p className="text-green-800">
                     Discover the benefits of collaborating with us

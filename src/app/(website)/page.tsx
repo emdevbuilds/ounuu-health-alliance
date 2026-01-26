@@ -395,7 +395,7 @@ export default function Home() {
               <div className="absolute -inset-4 bg-gradient-to-r from-green-500 to-green-600 rounded-3xl blur-3xl opacity-25 group-hover:opacity-40 transition-opacity duration-500" />
               <div className="relative bg-white rounded-3xl p-4 shadow-2xl">
                 <Image
-                  alt="OUNUU team members working with community"
+                  alt="Obiumunna Na Umuada team members working with community"
                   className="rounded-2xl relative z-10"
                   src="/about-img.jpg"
                   width={800}

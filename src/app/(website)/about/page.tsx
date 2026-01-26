@@ -228,7 +228,7 @@ const About = () => {
             <div className="space-y-6">
               <p className="leading-relaxed text-lg text-gray-700">
                 <span className="text-2xl font-bold text-green-700">
-                  OUNUU Health Alliance
+                  Obiumunna Na Umuada Health Alliance
                 </span>{" "}
                 is the healthcare arm of{" "}
                 <strong className="text-green-800">
@@ -263,7 +263,7 @@ const About = () => {
               <div className="absolute -inset-8 bg-gradient-to-r from-green-400 via-green-500 to-green-600 rounded-full blur-3xl opacity-20 group-hover:opacity-30 transition-opacity animate-pulse" />
               <div className="relative bg-white rounded-3xl p-8 shadow-2xl">
                 <Image
-                  alt="OUNUU Health Alliance Logo"
+                  alt="Obiumunna Na Umuada Health Alliance Logo"
                   src="/logo.svg"
                   height={400}
                   width={400}
@@ -320,7 +320,7 @@ const About = () => {
               <p className="leading-relaxed text-lg text-gray-700">
                 Through his leadership, the organization launched{" "}
                 <strong className="text-green-800">
-                  OUNUU Health Alliance
+                  Obiumunna Na Umuada Health Alliance
                 </strong>{" "}
                 — a dedicated initiative focused on improving health outcomes
                 and delivering care to underserved communities.
@@ -635,8 +635,8 @@ const About = () => {
             </h2>
             <p className="text-xl text-green-50 max-w-3xl mx-auto">
               Whether you're looking to volunteer, donate, or partner with us,
-              there's a place for you at OUNUU Health Alliance. Together, we can
-              transform lives.
+              there's a place for you at Obiumunna Na Umuada Health Alliance.
+              Together, we can transform lives.
             </p>
           </motion.div>
 

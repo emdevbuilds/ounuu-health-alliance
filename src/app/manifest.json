@@ -1,5 +1,5 @@
 {
-  "name": "OUNUU Health Alliance",
+  "name": "Obiumunna Na Umuada Health Alliance",
   "short_name": "OUNUU Health",
   "description": "Community-driven nonprofit transforming lives through accessible healthcare and support for underserved communities in Nigeria.",
   "start_url": "/",
@@ -29,7 +29,7 @@
     {
       "name": "Donate",
       "short_name": "Donate",
-      "description": "Make a donation to OUNUU Health Alliance",
+      "description": "Make a donation to Obiumunna Na Umuada Health Alliance",
       "url": "/donation",
       "icons": [
         {

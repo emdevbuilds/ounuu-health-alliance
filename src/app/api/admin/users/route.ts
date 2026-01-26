@@ -13,7 +13,7 @@ export async function GET(req: NextRequest) {
     if (session.role !== "super_admin") {
       return ApiResponse.error(
         "Unauthorized. Super admin access required.",
-        403
+        403,
       );
     }
 
@@ -42,7 +42,7 @@ export async function POST(req: NextRequest) {
     if (session.role !== "super_admin") {
       return ApiResponse.error(
         "Unauthorized. Super admin access required.",
-        403
+        403,
       );
     }
 
@@ -80,7 +80,7 @@ export async function POST(req: NextRequest) {
     return ApiResponse.success(
       { id: admin._id },
       "Admin created successfully",
-      201
+      201,
     );
   } catch (err: any) {
     console.error("Create admin error:", err);
@@ -106,7 +106,7 @@ export async function PATCH(req: NextRequest) {
     if (session.role !== "super_admin") {
       return ApiResponse.error(
         "Unauthorized. Super admin access required.",
-        403
+        403,
       );
     }
 
@@ -121,7 +121,7 @@ export async function PATCH(req: NextRequest) {
     const admin = await Admin.findByIdAndUpdate(
       id,
       { isActive },
-      { new: true }
+      { new: true },
     ).select("-password");
 
     if (!admin) {
@@ -146,7 +146,7 @@ export async function DELETE(req: NextRequest) {
     if (session.role !== "super_admin") {
       return ApiResponse.error(
         "Unauthorized. Super admin access required.",
-        403
+        403,
       );
     }
 
@@ -166,7 +166,7 @@ export async function DELETE(req: NextRequest) {
     }
 
     // Prevent deleting main admin
-    if (admin.email === "admin@ounuu.org") {
+    if (admin.email === "obiumunna2024@gmail.com") {
       return ApiResponse.error("Cannot delete the main admin account", 403);
     }
 

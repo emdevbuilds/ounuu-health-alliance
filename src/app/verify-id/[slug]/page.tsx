@@ -58,8 +58,9 @@ export default function VerifyIDPage() {
             {/* Warning Box */}
             <div className="bg-red-50 border-2 border-red-200 rounded-2xl p-4 sm:p-5 mb-6">
               <p className="text-sm sm:text-base text-red-800 font-medium">
-                ⚠️ <strong>Security Alert:</strong> Only official OUNUU Health
-                Alliance ID cards can be verified through this system.
+                ⚠️ <strong>Security Alert:</strong> Only official Obiumunna Na
+                Umuada Health Alliance ID cards can be verified through this
+                system.
               </p>
             </div>
 
@@ -143,7 +144,7 @@ export default function VerifyIDPage() {
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="text-center px-4">
                 <h2 className="text-white text-xl sm:text-2xl md:text-3xl font-bold">
-                  OUNUU HEALTH ALLIANCE
+                  OBIUMUNNA NA UMUADA HEALTH ALLIANCE
                 </h2>
                 <p className="text-white/90 text-xs sm:text-sm mt-1">
                   Official Team Member Verification
@@ -256,9 +257,9 @@ export default function VerifyIDPage() {
                   </h4>
                   <p className="text-xs sm:text-sm text-green-700 leading-relaxed">
                     This ID card has been verified against our official
-                    database. This person is a confirmed member of the OUNUU
-                    Health Alliance team. This verification page cannot be faked
-                    or replicated.
+                    database. This person is a confirmed member of the Obiumunna
+                    Na Umuada Health Alliance team. This verification page
+                    cannot be faked or replicated.
                   </p>
                 </div>
               </div>
@@ -305,7 +306,8 @@ export default function VerifyIDPage() {
                     day: "numeric",
                   })}
                 </strong>{" "}
-                • Powered by OUNUU Health Alliance Verification System
+                • Powered by Obiumunna Na Umuada Health Alliance Verification
+                System
               </p>
             </div>
           </div>
@@ -322,10 +324,10 @@ export default function VerifyIDPage() {
             If you suspect this ID is being misused, please contact us
             immediately at{" "}
             <a
-              href="mailto:obiumunnanaumuadahealthallianc@gmail.com"
+              href="mailto:info@obiumunnanaumuadahealthalliance.com"
               className="text-green-600 hover:text-green-700 font-medium hover:underline"
             >
-              obiumunnanaumuadahealthallianc@gmail.com
+              info@obiumunnanaumuadahealthalliance.com
             </a>
           </p>
         </motion.div>

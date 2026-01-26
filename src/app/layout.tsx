@@ -23,14 +23,23 @@ const dancingScript = Dancing_Script({
 export const metadata: Metadata = {
   // Basic Metadata
   title: {
-    default: "OUNUU Health Alliance | Serving Communities, Saving Lives",
-    template: "%s | OUNUU Health Alliance",
+    default:
+      "Obiumunna Na Umuada Health Alliance | Serving Communities, Saving Lives",
+    template: "%s | Obiumunna Na Umuada Health Alliance",
   },
   description:
-    "OUNUU Health Alliance is a community-driven nonprofit transforming lives through accessible healthcare, emergency relief, and unwavering support for underserved communities in Nigeria. Join us in making a difference.",
+    "Obiumunna Na Umuada Health Alliance is a community-driven nonprofit transforming lives through accessible healthcare, emergency relief, and unwavering support for underserved communities in Nigeria. Join us in making a difference.",
   keywords: [
-    "OUNUU Health Alliance",
+    "Obiumunna Na Umuada Health Alliance",
     "Obiumunna Na Umuada United",
+    "Obiumunna Na Umuada",
+    "OUNUU Health Alliance",
+    "OUNUU",
+    "healthcare NGO Nigeria",
+    "medical aid Nigeria",
+    "community healthcare Nigeria",
+    "volunteer healthcare Nigeria",
+    "donate to healthcare Nigeria",
     "healthcare Nigeria",
     "community health",
     "nonprofit organization",
@@ -50,12 +59,12 @@ export const metadata: Metadata = {
     "CSR partnership",
     "healthcare nonprofit",
   ],
-  authors: [{ name: "OUNUU Health Alliance" }],
-  creator: "OUNUU Health Alliance",
-  publisher: "OUNUU Health Alliance",
+  authors: [{ name: "Obiumunna Na Umuada Health Alliance" }],
+  creator: "Obiumunna Na Umuada Health Alliance",
+  publisher: "Obiumunna Na Umuada Health Alliance",
 
   // Application Name
-  applicationName: "OUNUU Health Alliance",
+  applicationName: "Obiumunna Na Umuada Health Alliance",
 
   // Robots
   robots: {
@@ -74,9 +83,10 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_NG",
-    url: "https://ounuu-health-alliance.vercel.app/",
-    siteName: "OUNUU Health Alliance",
-    title: "OUNUU Health Alliance | Serving Communities, Saving Lives",
+    url: "https://www.obiumunnanaumuadahealthalliance.com/",
+    siteName: "Obiumunna Na Umuada Health Alliance",
+    title:
+      "Obiumunna Na Umuada Health Alliance | Serving Communities, Saving Lives",
     description:
       "Community-driven nonprofit transforming lives through accessible healthcare and support for underserved communities in Nigeria.",
     images: [
@@ -84,7 +94,7 @@ export const metadata: Metadata = {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "OUNUU Health Alliance - Serving Communities and Saving Lives",
+        alt: "Obiumunna Na Umuada Health Alliance - Serving Communities and Saving Lives",
         type: "image/jpeg",
       },
     ],
@@ -95,7 +105,8 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@OBiUMUNNAHEALTH",
     creator: "@OBiUMUNNAHEALTH",
-    title: "OUNUU Health Alliance | Serving Communities, Saving Lives",
+    title:
+      "Obiumunna Na Umuada Health Alliance | Serving Communities, Saving Lives",
     description:
       "Community-driven nonprofit transforming lives through accessible healthcare and support for underserved communities in Nigeria.",
     images: ["/twitter-image.jpg"],
@@ -106,7 +117,7 @@ export const metadata: Metadata = {
 
   // Alternate Languages
   alternates: {
-    canonical: "https://ounuu-health-alliance.vercel.app/",
+    canonical: "https://www.obiumunnanaumuadahealthalliance.com/",
   },
 
   // Category
@@ -139,7 +150,7 @@ export const metadata: Metadata = {
   ],
 
   // Other
-  metadataBase: new URL("https://ounuu-health-alliance.vercel.app/"),
+  metadataBase: new URL("https://www.obiumunnanaumuadahealthalliance.com/"),
   formatDetection: {
     telephone: true,
     email: true,
@@ -156,12 +167,12 @@ export default function RootLayout({
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "NGO",
-    name: "OUNUU Health Alliance",
+    name: "Obiumunna Na Umuada Health Alliance",
     alternateName: "Obiumunna Na Umuada United Health Alliance",
-    url: "https://ounuu-health-alliance.vercel.app/",
-    logo: "https://ounuu-health-alliance.vercel.app/logo.svg",
+    url: "https://www.obiumunnanaumuadahealthalliance.com/",
+    logo: "https://www.obiumunnanaumuadahealthalliance.com/logo.svg",
     description:
-      "OUNUU Health Alliance is a community-driven nonprofit transforming lives through accessible healthcare and support for underserved communities in Nigeria.",
+      "Obiumunna Na Umuada Health Alliance is a community-driven nonprofit transforming lives through accessible healthcare and support for underserved communities in Nigeria.",
     address: {
       "@type": "PostalAddress",
       streetAddress:
@@ -175,7 +186,7 @@ export default function RootLayout({
         "@type": "ContactPoint",
         telephone: "+234-806-328-9585",
         contactType: "customer service",
-        email: "obiumunnanaumuadahealthallianc@gmail.com",
+        email: "info@obiumunnanaumuadahealthalliance.com",
         availableLanguage: ["English"],
       },
     ],
@@ -188,7 +199,7 @@ export default function RootLayout({
     ],
     founder: {
       "@type": "Person",
-      name: "Obiumunna Na Umuada United",
+      name: "Obiumunna Na Umuada Health Alliance",
     },
     areaServed: {
       "@type": "Country",
@@ -206,8 +217,8 @@ export default function RootLayout({
   const websiteSchema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    name: "OUNUU Health Alliance",
-    url: "https://ounuu-health-alliance.vercel.app/",
+    name: "Obiumunna Na Umuada Health Alliance",
+    url: "https://www.obiumunnanaumuadahealthalliance.com/",
     description:
       "Community-driven nonprofit transforming lives through accessible healthcare and support for underserved communities in Nigeria.",
     potentialAction: {
@@ -215,7 +226,7 @@ export default function RootLayout({
       target: {
         "@type": "EntryPoint",
         urlTemplate:
-          "https://ounuu-health-alliance.vercel.app/search?q={search_term_string}",
+          "https://www.obiumunnanaumuadahealthalliance.com/search?q={search_term_string}",
       },
       "query-input": "required name=search_term_string",
     },
@@ -260,7 +271,10 @@ export default function RootLayout({
           name="apple-mobile-web-app-status-bar-style"
           content="black-translucent"
         />
-        <meta name="apple-mobile-web-app-title" content="OUNUU Health" />
+        <meta
+          name="apple-mobile-web-app-title"
+          content="Obiumunna Na Umuada Health Alliance"
+        />
       </head>
       <body
         className={`${inter.variable} ${dancingScript.variable} antialiased`}

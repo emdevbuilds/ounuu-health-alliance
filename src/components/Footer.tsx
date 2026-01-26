@@ -92,15 +92,15 @@ const Footer = () => {
               <div className="relative">
                 <div className="absolute inset-0 bg-green-600/20 rounded-full blur-md group-hover:bg-green-600/30 transition-all" />
                 <Image
-                  alt="OUNUU Health Alliance Logo"
+                  alt="Obiumunna Na Umuada Health Alliance Logo"
                   src="/logo.svg"
-                  width={60}
-                  height={60}
-                  className="relative z-10"
+                  width={100}
+                  height={100}
+                  className="relative z-10 flex-shrink-0"
                 />
               </div>
               <h1 className="text-xl font-bold pl-3 group-hover:text-green-700 transition-colors">
-                OUNUU Health Alliance
+                Obiumunna Na Umuada Health Alliance
               </h1>
             </Link>
 
@@ -152,7 +152,7 @@ const Footer = () => {
             </motion.div>
 
             <motion.a
-              href="mailto:obiumunnanaumuadahealthallianc@gmail.com"
+              href="mailto:info@obiumunnanaumuadahealthalliance.com"
               whileHover={{ x: 5 }}
               className="flex gap-3 group"
             >
@@ -161,7 +161,7 @@ const Footer = () => {
                 size={24}
               />
               <p className="text-base break-all whitespace-normal text-gray-700 group-hover:text-green-700 group-hover:underline transition-colors">
-                obiumunnanaumuadahealthallianc@gmail.com
+                info@obiumunnanaumuadahealthalliance.com
               </p>
             </motion.a>
 
@@ -261,8 +261,8 @@ const Footer = () => {
             </p>
 
             <p className="text-sm text-gray-700">
-              © {new Date().getFullYear()} OUNUU Health Alliance. All rights
-              reserved.
+              © {new Date().getFullYear()} Obiumunna Na Umuada Health Alliance.
+              All rights reserved.
             </p>
           </motion.div>
         </motion.div>
