@@ -125,7 +125,15 @@ export default function IDCardPage() {
               <div className="bg-white/10 backdrop-blur-sm px-6 py-3 border-b border-white/20">
                 <div className="flex items-center gap-3">
                   <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center">
-                    <span className="text-2xl font-bold text-green-700">O</span>
+                    {/* <span className="text-2xl font-bold text-green-700">O</span> */}
+                    <Image
+                      className="w-12 h-12 md:w-18 md:h-18"
+                      alt="Obiumunna Na Umuada Health Alliance Logo"
+                      src="/logo.svg"
+                      width={60}
+                      height={60}
+                      priority
+                    />
                   </div>
                   <div>
                     <h2 className="text-white font-bold text-sm">
@@ -184,8 +192,8 @@ export default function IDCardPage() {
               {/* Footer */}
               <div className="absolute bottom-0 left-0 right-0 bg-white/10 backdrop-blur-sm px-6 py-2 border-t border-white/20">
                 <div className="flex items-center justify-between text-white/80 text-xs">
-                  <span>📧 {member.contact.email.split("@")[0]}...</span>
-                  <span>📞 {member.contact.phone.slice(0, 9)}...</span>
+                  {/* <span>📧 {member.contact.email.split("@")[0]}...</span>
+                  <span>📞 {member.contact.phone.slice(0, 9)}...</span> */}
                   <span>Valid • {new Date().getFullYear()}</span>
                 </div>
               </div>

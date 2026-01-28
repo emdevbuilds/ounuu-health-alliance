@@ -2,7 +2,7 @@ export const members = [
   {
     slug: "godwin-eziechina-chukwu",
     title: "Mazi",
-    role: "Founder",
+    role: "Founder/President",
     name: "Godwin Eziechina Chukwu",
     contact: {
       email: "gchukwu833@gmail.com",
