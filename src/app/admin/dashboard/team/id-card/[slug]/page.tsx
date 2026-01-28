@@ -213,7 +213,7 @@ export default function IDCardPage() {
                 <span className="text-green-600 font-bold">2.</span>
                 <span>
                   The QR code links to:{" "}
-                  <code className="bg-gray-100 px-2 py-1 rounded text-xs">
+                  <code className="bg-gray-100 px-2 py-1 rounded text-xs break-all whitespace-normal">
                     {verifyUrl}
                   </code>
                 </span>
