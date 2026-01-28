@@ -51,7 +51,7 @@ export default function DonationsPage() {
   const deleteDonation = async (id: string, donorName: string) => {
     if (
       !confirm(
-        `Are you sure you want to delete the donation from ${donorName}? This action cannot be undone.`
+        `Are you sure you want to delete the donation from ${donorName}? This action cannot be undone.`,
       )
     ) {
       return;
@@ -225,8 +225,8 @@ export default function DonationsPage() {
                         donation.paymentStatus === "success"
                           ? "bg-green-100 text-green-700"
                           : donation.paymentStatus === "pending"
-                          ? "bg-orange-100 text-orange-700"
-                          : "bg-red-100 text-red-700"
+                            ? "bg-orange-100 text-orange-700"
+                            : "bg-red-100 text-red-700"
                       }`}
                     >
                       {donation.paymentStatus}
@@ -257,7 +257,7 @@ export default function DonationsPage() {
                               donation._id,
                               donation.isAnonymous
                                 ? "Anonymous Donor"
-                                : donation.fullName
+                                : donation.fullName,
                             )
                           }
                           className="hover:bg-red-50 text-red-600"
@@ -302,7 +302,9 @@ export default function DonationsPage() {
                   <p className="text-sm font-semibold text-gray-600 mb-1">
                     Email
                   </p>
-                  <p className="text-lg">{selectedDonation.email}</p>
+                  <p className="text-lg break-all whitespace-normal">
+                    {selectedDonation.email}
+                  </p>
                 </div>
                 <div>
                   <p className="text-sm font-semibold text-gray-600 mb-1">
@@ -311,7 +313,7 @@ export default function DonationsPage() {
                   <p className="text-2xl font-bold text-green-700">
                     {formatCurrency(
                       selectedDonation.amount,
-                      selectedDonation.currency
+                      selectedDonation.currency,
                     )}
                   </p>
                 </div>
@@ -332,8 +334,8 @@ export default function DonationsPage() {
                       selectedDonation.paymentStatus === "success"
                         ? "bg-green-100 text-green-700"
                         : selectedDonation.paymentStatus === "pending"
-                        ? "bg-orange-100 text-orange-700"
-                        : "bg-red-100 text-red-700"
+                          ? "bg-orange-100 text-orange-700"
+                          : "bg-red-100 text-red-700"
                     }`}
                   >
                     {selectedDonation.paymentStatus}
