@@ -31,7 +31,9 @@ export default function AdminLoginPage() {
 
       if (res.ok) {
         toast.success(data.message || "Login successful!");
-        router.push("/admin/dashboard");
+        setTimeout(() => {
+          router.push("/admin/dashboard");
+        }, 1500);
       } else {
         toast.error(data.message || "Login failed");
       }
