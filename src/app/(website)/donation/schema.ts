@@ -28,7 +28,7 @@ export const donationSchema = z
       .max(500, "Message is too long")
       .optional()
       .or(z.literal("")),
-    isAnonymous: z.boolean(),
+    // isAnonymous: z.boolean(),
   })
   .refine(
     (data) => {
@@ -42,7 +42,7 @@ export const donationSchema = z
     {
       message: "Amount is below minimum",
       path: ["amount"],
-    }
+    },
   )
   .superRefine((data, ctx) => {
     // Add custom error message based on currency

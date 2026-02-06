@@ -61,11 +61,11 @@ const DonationForm = () => {
       donationType: "one-time",
       purpose: "",
       message: "",
-      isAnonymous: false,
+      // isAnonymous: false,
     },
   });
 
-  const isAnonymous = watch("isAnonymous");
+  // const isAnonymous = watch("isAnonymous");
   const donationType = watch("donationType");
   const selectedCurrency = watch("currency");
 
@@ -133,7 +133,7 @@ const DonationForm = () => {
           result.message || "Failed to process donation. Please try again.",
           {
             position: "top-center",
-          }
+          },
         );
       }
     } catch (error) {
@@ -311,7 +311,7 @@ const DonationForm = () => {
               </Field>
 
               {/* Anonymous Donation */}
-              <Field>
+              {/* <Field>
                 <label
                   className={`flex items-center gap-3 p-4 rounded-xl border-2 cursor-pointer transition-all ${
                     isAnonymous
@@ -334,16 +334,35 @@ const DonationForm = () => {
                     </p>
                   </div>
                 </label>
-              </Field>
+              </Field> */}
 
               {/* Donor Information */}
               <div className="bg-gradient-to-br from-gray-50 to-green-50/30 rounded-2xl p-6 border-2 border-gray-100">
                 <h4 className="text-lg font-semibold text-green-800 mb-4">
-                  {isAnonymous ? "Contact Information" : "Your Information"}
+                  Your Information
+                  {/* {isAnonymous ? "Contact Information" : "Your Information"} */}
                 </h4>
 
                 <div className="space-y-4">
-                  {!isAnonymous && (
+                  <Field>
+                    <FieldLabel className="text-base font-medium text-gray-700">
+                      Full Name *
+                    </FieldLabel>
+                    <Input
+                      placeholder="John Doe"
+                      disabled={isSubmitting}
+                      {...register("fullName")}
+                      aria-invalid={errors.fullName ? "true" : "false"}
+                      className="border-2 rounded-xl py-6"
+                    />
+                    {errors.fullName && (
+                      <p className="text-sm text-red-600 mt-2">
+                        {errors.fullName.message}
+                      </p>
+                    )}
+                  </Field>
+
+                  {/* {!isAnonymous && (
                     <Field>
                       <FieldLabel className="text-base font-medium text-gray-700">
                         Full Name *
@@ -361,11 +380,12 @@ const DonationForm = () => {
                         </p>
                       )}
                     </Field>
-                  )}
+                  )} */}
 
                   <Field>
                     <FieldLabel className="text-base font-medium text-gray-700">
-                      Email {isAnonymous ? "(for receipt)" : ""} *
+                      Email *
+                      {/* Email {isAnonymous ? "(for receipt)" : ""} * */}
                     </FieldLabel>
                     <Input
                       type="email"
@@ -382,7 +402,25 @@ const DonationForm = () => {
                     )}
                   </Field>
 
-                  {!isAnonymous && (
+                  <Field>
+                    <FieldLabel className="text-base font-medium text-gray-700">
+                      Phone Number (Optional)
+                    </FieldLabel>
+                    <Input
+                      type="tel"
+                      placeholder="+234 800 000 0000"
+                      disabled={isSubmitting}
+                      {...register("phone")}
+                      className="border-2 rounded-xl py-6"
+                    />
+                    {errors.phone && (
+                      <p className="text-sm text-red-600 mt-2">
+                        {errors.phone.message}
+                      </p>
+                    )}
+                  </Field>
+
+                  {/* {!isAnonymous && (
                     <Field>
                       <FieldLabel className="text-base font-medium text-gray-700">
                         Phone Number (Optional)
@@ -400,7 +438,7 @@ const DonationForm = () => {
                         </p>
                       )}
                     </Field>
-                  )}
+                  )} */}
                 </div>
               </div>
 

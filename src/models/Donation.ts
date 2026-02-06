@@ -9,7 +9,7 @@ export interface IDonation extends Document {
   donationType: "one-time" | "monthly";
   purpose?: string;
   message?: string;
-  isAnonymous: boolean;
+  // isAnonymous: boolean;
   paymentStatus: "pending" | "success" | "failed" | "abandoned";
   paystackReference?: string;
   paystackAccessCode?: string;
@@ -62,10 +62,10 @@ const DonationSchema = new Schema<IDonation>(
       trim: true,
       maxlength: [500, "Message is too long"],
     },
-    isAnonymous: {
-      type: Boolean,
-      default: false,
-    },
+    // isAnonymous: {
+    //   type: Boolean,
+    //   default: false,
+    // },
     paymentStatus: {
       type: String,
       enum: ["pending", "success", "failed", "abandoned"],
@@ -88,7 +88,7 @@ const DonationSchema = new Schema<IDonation>(
   {
     timestamps: true,
     collection: "donations",
-  }
+  },
 );
 
 DonationSchema.index({ email: 1 });

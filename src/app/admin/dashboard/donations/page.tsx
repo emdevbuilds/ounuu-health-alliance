@@ -210,7 +210,8 @@ export default function DonationsPage() {
               {filteredDonations.map((donation: any) => (
                 <TableRow key={donation._id} className="hover:bg-green-50/50">
                   <TableCell className="font-medium">
-                    {donation.isAnonymous ? "Anonymous" : donation.fullName}
+                    {donation.fullName}
+                    {/* {donation.isAnonymous ? "Anonymous" : donation.fullName} */}
                   </TableCell>
                   <TableCell>{donation.email}</TableCell>
                   <TableCell className="font-semibold text-green-700">
@@ -252,13 +253,15 @@ export default function DonationsPage() {
                         <Button
                           variant="outline"
                           size="sm"
-                          onClick={() =>
-                            deleteDonation(
-                              donation._id,
-                              donation.isAnonymous
-                                ? "Anonymous Donor"
-                                : donation.fullName,
-                            )
+                          onClick={
+                            () =>
+                              deleteDonation(donation._id, donation.fullName)
+                            // deleteDonation(
+                            //   donation._id,
+                            //   donation.isAnonymous
+                            //     ? "Anonymous Donor"
+                            //     : donation.fullName,
+                            // )
                           }
                           className="hover:bg-red-50 text-red-600"
                         >
@@ -293,9 +296,10 @@ export default function DonationsPage() {
                     Donor Name
                   </p>
                   <p className="text-lg">
-                    {selectedDonation.isAnonymous
+                    {/* {selectedDonation.isAnonymous
                       ? "Anonymous Donor"
-                      : selectedDonation.fullName}
+                      : selectedDonation.fullName} */}
+                    {selectedDonation.fullName}
                   </p>
                 </div>
                 <div>

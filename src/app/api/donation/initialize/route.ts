@@ -38,7 +38,7 @@ export async function POST(req: NextRequest) {
             phone: validatedData.phone,
             purpose: validatedData.purpose,
             donationType: validatedData.donationType,
-            isAnonymous: validatedData.isAnonymous,
+            // isAnonymous: validatedData.isAnonymous,
           },
         }),
       }
