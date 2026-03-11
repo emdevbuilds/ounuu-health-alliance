@@ -11,18 +11,18 @@
 
 ## 📋 Table of Contents
 
-- [About](#about)
-- [Features](#features)
-- [Tech Stack](#tech-stack)
-- [Getting Started](#getting-started)
-- [Project Structure](#project-structure)
-- [Admin Dashboard](#admin-dashboard)
-- [Deployment](#deployment)
-- [Environment Variables](#environment-variables)
-- [API Documentation](#api-documentation)
-- [Contributing](#contributing)
-- [License](#license)
-- [Support](#support)
+- [About](#-about)
+- [Features](#-features)
+- [Tech Stack](#-tech-stack)
+- [Getting Started](#-getting-started)
+- [Project Structure](#-project-structure)
+- [Admin Dashboard](#-admin-dashboard)
+- [Deployment](#-deployment)
+- [Environment Variables](#-environment-variables)
+- [API Documentation](#-api-documentation)
+- [Contributing](#-contributing)
+- [License](#-license)
+- [Support](#-support)
 
 ---
 
