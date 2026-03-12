@@ -139,7 +139,7 @@ Edit `.env.local` and add your credentials:
 
 ```env
 # MongoDB
-MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/ounuu
+MONGODB_URI=your-mongodb-connection-string
 
 # JWT Authentication
 JWT_SECRET=your-super-secret-jwt-key-minimum-32-characters-long
