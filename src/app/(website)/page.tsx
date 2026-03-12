@@ -27,7 +27,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 
-// Animation variants (keep all your existing variants)
+// Animation variants
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 40 },
   visible: {
@@ -73,7 +73,7 @@ const slideInRight: Variants = {
   },
 };
 
-// Keep all your existing data arrays (programs, getInvolvedCards)
+// Existing data arrays (programs, getInvolvedCards)
 const programs = [
   {
     icon: Ambulance,

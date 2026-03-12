@@ -2,9 +2,7 @@ import bcrypt from "bcryptjs";
 import { SignJWT, jwtVerify } from "jose";
 import { cookies } from "next/headers";
 
-const SECRET_KEY =
-  process.env.JWT_SECRET || "your-super-secret-key-change-in-production";
-const key = new TextEncoder().encode(SECRET_KEY);
+const key = new TextEncoder().encode(process.env.JWT_SECRET);
 
 export interface SessionPayload {
   userId: string;
@@ -22,14 +20,14 @@ export async function hashPassword(password: string): Promise<string> {
 // Verify password
 export async function verifyPassword(
   password: string,
-  hashedPassword: string
+  hashedPassword: string,
 ): Promise<boolean> {
   return bcrypt.compare(password, hashedPassword);
 }
 
 // Create session token
 export async function createSession(
-  payload: Omit<SessionPayload, "expiresAt">
+  payload: Omit<SessionPayload, "expiresAt">,
 ) {
   const expiresAt = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000); // 7 days
 
@@ -56,7 +54,7 @@ export async function createSession(
 
 // Verify session token
 export async function verifySession(
-  token: string
+  token: string,
 ): Promise<SessionPayload | null> {
   try {
     const { payload } = await jwtVerify(token, key);
