@@ -656,6 +656,4 @@ _Empowering Communities Through Healthcare_
 
 **© 2026 Obiumunna Na Umuada United Health Alliance. All Rights Reserved.**
 
-_Made with ❤️ in Nigeria 🇳🇬_
-
 </div>
