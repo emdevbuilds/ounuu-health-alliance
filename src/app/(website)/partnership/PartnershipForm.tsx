@@ -89,7 +89,7 @@ const PartnershipForm = () => {
           result.message || "Partnership inquiry sent successfully!",
           {
             position: "top-center",
-          }
+          },
         );
         reset();
       } else {
@@ -98,7 +98,7 @@ const PartnershipForm = () => {
             "Failed to submit partnership form. Please try again.",
           {
             position: "top-center",
-          }
+          },
         );
       }
     } catch (error) {
@@ -106,7 +106,7 @@ const PartnershipForm = () => {
         "Oops! Something went wrong on our end. Please try submitting the form again.",
         {
           position: "top-center",
-        }
+        },
       );
     }
   };
@@ -393,7 +393,7 @@ const PartnershipForm = () => {
             <Button
               type="submit"
               disabled={isSubmitting}
-              className="w-full bg-gradient-to-r from-green-600 to-green-700 text-white hover:from-green-700 hover:to-green-800 py-6 text-lg font-bold rounded-xl shadow-xl hover:shadow-2xl transition-all"
+              className="cursor-pointer w-full bg-gradient-to-r from-green-600 to-green-700 text-white hover:from-green-700 hover:to-green-800 py-6 text-lg font-bold rounded-xl shadow-xl hover:shadow-2xl transition-all"
               size="lg"
             >
               {isSubmitting ? (

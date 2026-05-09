@@ -465,7 +465,7 @@ const VolunteerForm = () => {
             <Button
               type="submit"
               disabled={isSubmitting}
-              className="w-full bg-gradient-to-r from-green-600 to-blue-600 text-white hover:from-green-700 hover:to-blue-700 py-6 text-lg font-bold rounded-xl shadow-xl hover:shadow-2xl transition-all"
+              className="cursor-pointer w-full bg-gradient-to-r from-green-600 to-blue-600 text-white hover:from-green-700 hover:to-blue-700 py-6 text-lg font-bold rounded-xl shadow-xl hover:shadow-2xl transition-all"
               size="lg"
             >
               {isSubmitting ? (
